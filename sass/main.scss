@@ -1,0 +1,411 @@
+// HZ3オリジナルカラーパレット
+$hz3Green: #008250;
+$hz3DarkGray: #020204;
+$hz3Gray: #333344;
+$hz3LightGray: #aaaabb;
+$hz3Blue: #66aadd;
+
+// 表示幅
+$dispWidth: 640px;
+$breakPointLarge: 640px;
+
+// 東雲フォント読み込み
+@font-face
+{
+	font-family: Shinonome16;
+	src: 
+		url("../fonts/Shinonome16.woff") format('woff'),
+		url("../fonts/Shinonome16.woff2") format('woff2');
+	font-display: swap;
+}
+
+.wf-mplus1p { font-family: "M PLUS 1p"; }
+
+// フォント初期値
+@mixin DefFontValues 
+{
+    font-size: 16px;
+    font-family: "MS UI Gothic", "Osaka", "M PLUS 1p";
+}
+
+@mixin Center
+{
+    margin: 0 auto;
+}
+
+html 
+{
+    @include DefFontValues;
+    //-webkit-font-smoothing: antialiased;
+    //-moz-osx-font-smoothing: grayscale;
+    
+    ::selection
+    {
+        color: white;
+        background: rgba(0, 130, 80, .99);
+    }
+}
+
+body 
+{
+    font-size: 1em;
+    color: whitesmoke;
+    background-color: black;
+    //image-rendering: pixelated;
+    word-break: break-all;
+}
+
+a 
+{
+    text-decoration: none;
+}
+
+a:hover
+{
+    text-decoration: underline;
+}
+
+img::selection
+{
+    background: rgba(255, 255, 255, .1);
+}
+
+h1
+{
+    text-align: center;
+    margin: 16px 0;
+}
+
+header 
+{
+    text-align: center;
+    
+    background-color: $hz3Green;
+}
+
+nav 
+{
+    overflow: hidden;
+    width: 100%;
+    background-color: $hz3DarkGray;
+    box-sizing: border-box;
+    
+    li 
+    {
+        width: 80px;
+        float: left;
+        border: solid 1px $hz3DarkGray;
+        
+        a 
+        {
+            text-align: center;
+            display:block;
+            padding: 
+            {
+                top: 8px;
+                bottom: 8px;
+            }
+            
+            color: $hz3LightGray;
+            text-decoration: underline;
+            
+            &:hover
+            {
+                color: whitesmoke;
+                background-color: $hz3Gray;
+            }
+        }
+    }
+}
+
+.pixelated
+{
+    -ms-interpolation-mode: nearest-neighbor;
+    image-rendering: pixelated;
+}
+
+.nav_active
+{
+    display:block;
+    padding: 
+    {
+        top: 8px;
+        bottom: 8px;
+    }
+    border: solid 1px $hz3DarkGray;
+                
+	color: whitesmoke;
+    background-color: $hz3Green;
+	text-decoration: none;
+}
+
+.list_box
+{
+    width: $dispWidth / 2;
+    margin: 0 auto;
+    
+    .list_title
+    {
+        display: inline-block;
+        width: 92px;
+        background-color: $hz3DarkGray;
+        text-align: center;
+        border-bottom: solid 1px $hz3Green;
+        padding: 4px;
+        margin: 2px;
+    }
+
+    .list_text
+    {
+        display: inline-block;
+        padding: 4px;
+        width: 220px;
+        margin: 2px;
+        border-bottom: solid 1px $hz3Gray;
+    }
+}
+
+.info
+{
+    .info_title
+    {
+        color: $hz3LightGray;
+        display: inline-block;
+        margin: 0px 16px;
+        padding: 4px;
+        border-bottom: solid 1px $hz3Gray;
+    }
+    
+    .info_text
+    {
+        padding: 
+        {
+            top: 8px;
+            bottom: 20px;
+            left: 32px;
+            right: 32px;
+        }
+    }
+}
+
+footer 
+{
+    text-align: center;
+	padding: 12px 0;
+}
+
+// クラス
+.wrapper
+{
+    min-width: $dispWidth / 2;
+    width: $dispWidth / 2;
+    @include Center;
+    background-color: $hz3DarkGray;
+}
+
+.front_img img
+{
+    width: $dispWidth / 2;
+    padding-bottom: 16px;
+}
+
+@media screen and (orientation: landscape)
+{
+    .wrapper
+    {
+        min-width: $dispWidth;
+        width: $dispWidth;
+    }
+    
+    .front_img img
+    {
+        width: $dispWidth;
+        padding-bottom: 16px;
+    }
+}
+
+
+// PC、タブレットなど
+@media screen and (min-width: $breakPointLarge)
+{
+    .wrapper
+    {
+        min-width: $dispWidth;
+        width: $dispWidth;
+    }
+    
+    .front_img img
+    {
+        width: $dispWidth;
+        padding-bottom: 16px;
+    }
+}
+
+.grid
+{
+	overflow: hidden;
+    
+    li
+    {
+        float: left;
+        margin: 8px 8px;
+    }
+    
+    a
+    {
+        display: block;
+        overflow: hidden;
+        
+        border: solid 1px $hz3Gray; 
+        img
+        {
+            margin: -1px;
+        }
+    }
+    
+    a:hover
+    {
+        border: solid 2px $hz3LightGray; 
+        img
+        {
+            margin: -2px;
+        }
+    }
+}
+
+.line 
+{
+   border-bottom: 1px solid $hz3Green;
+}
+
+.center_partition
+{
+    border-bottom: 1px solid $hz3Gray;
+    margin: 16px 32px;
+}
+
+.title
+{
+	margin: 16px;
+	text-align: center;
+}
+
+.link
+{
+	color: $hz3Blue;
+	text-decoration: underline;
+    
+    &:hover
+    {
+        color: whitesmoke;
+    }
+}
+
+.label
+{
+	width: $dispWidth / 2 - 8;
+	color: white;
+    border-left: solid 8px $hz3Green;
+	text-align: left;
+    padding: {
+        top: 4px;
+        right: 8px;
+        bottom: 4px;
+        left: 12px;
+    }
+	margin: 4px 8px;
+}
+
+.default_text
+{
+	margin: 16px;
+    line-height: 1.3em;
+}
+
+.default_text_right
+{
+    margin: {
+        top: 0px;
+        right: 8px;
+        bottom: 8px;
+        left: 0px;
+    }
+	text-align: right;
+	color: $hz3LightGray;
+}
+
+.main_img
+{
+    text-align: center;
+    margin: 16px;
+}
+
+.main_img_left
+{
+    @extend .main_img;
+    text-align: left;
+}
+
+.main_img_right
+{
+    @extend .main_img;
+    text-align: right;
+}
+
+.copyright
+{
+	color: $hz3LightGray;
+	background: black;
+	padding: 12px;
+}
+
+.movie
+{
+    position: relative;
+    
+    img 
+    {
+        width: 100%;
+    }
+    
+    .movie_thumb
+    {
+        opacity: 0.5;
+        
+        &:hover + .movie_playicon
+        {
+            opacity: 1.0;
+        }
+        
+        &:active + .movie_playicon
+        {
+            opacity: 0.5;
+        }
+    }
+    
+    .movie_playicon
+    {
+        pointer-events: none;
+        
+        width: 64px;
+        height: 64px;
+        
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%,-50%);
+        transform: translate(-50%,-50%);
+        
+        opacity: 0.5;
+    }
+}
+
+.lum-lightbox{
+  z-index: 999;
+}
+
+.lum-lightbox-inner img 
+{
+    max-width: 160vw !important;
+    max-height: 85vh !important;
+}

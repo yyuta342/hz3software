@@ -1,0 +1,22 @@
+.main-art {
+  min-height: 480px;
+  z-index: -1;
+  background-image: url("../img/st_header_wp.png");
+  background-size: cover;
+  background-position: 50% 75%;
+  background-repeat: no-repeat;
+  background-attachment: local;
+}
+
+.main-art-inner {
+  color: #fff;
+  text-align: right;
+  position: relative;
+  right: 16px;
+  bottom: -392px;
+  text-shadow: 1px 1px 4px #bbbbbb;
+}
+
+header {
+  background: rgba(0, 0, 0, 0);
+}/*# sourceMappingURL=st.css.map */
