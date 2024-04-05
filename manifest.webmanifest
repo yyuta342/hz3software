@@ -14,11 +14,11 @@
 	"prefer_related_applications" : "false",
 	"icons" : [
 		{
-			"src": "https://hz3software.com/img/hz3software_favicon.png",
+			"src": "https://hz3software.com/images/hz3software_favicon.png",
 			"sizes": "16x16"
 		},
 		{
-			"src": "https://hz3software.com/img/hz3software_appicon.png",
+			"src": "https://hz3software.com/images/hz3software_appicon.png",
 			"sizes": "640x640"
 		}],
 	"generated" : "true"

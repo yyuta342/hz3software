@@ -1,7 +1,7 @@
 .main-art {
   min-height: 480px;
   z-index: -1;
-  background-image: url("../img/st_header_wp.png");
+  background-image: url("../images/st_header_wp.png");
   background-size: cover;
   background-position: 50% 75%;
   background-repeat: no-repeat;
