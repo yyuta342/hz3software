@@ -1,0 +1,19 @@
+h1
+{
+	font-size: 1.5em;
+	font-weight: 900;
+	margin: 16px 0 16px 0;
+}
+
+h2
+{
+	font-size: 1.2em;
+	font-weight: 600;
+	margin: 16px 0 16px 8px;
+}
+
+.mail
+{
+	color: #008250;
+	font-weight: 900;
+}

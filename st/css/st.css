@@ -1,0 +1,48 @@
+.main-art {
+  min-height: 480px;
+  z-index: -1;
+  background-image: url("../images/st_header_wp.png");
+  background-size: cover;
+  background-position: 50% 75%;
+  background-repeat: no-repeat;
+  background-attachment: local;
+}
+
+.main-art-inner {
+  color: #fff;
+  text-align: right;
+  position: relative;
+  right: 16px;
+  bottom: -392px;
+  text-shadow: 1px 1px 4px #bbbbbb;
+}
+
+header {
+  background: rgba(0, 0, 0, 0);
+}/*# sourceMappingURL=st.css.map */
+
+/* 更新履歴タイムライン */
+.changelog .ch-item {
+  position: relative;
+  padding-left: 1.25rem;         /* 点から本文までの距離 */
+  margin: 1.25rem 0;
+}
+.changelog .ch-item::before {
+  content: "";
+  position: absolute;
+  left: 0.35rem;                 /* 点の水平位置 */
+  top: 0.9rem;                   /* 点の垂直位置 */
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--bs-primary);
+  box-shadow: 0 0 0 3px rgba(13,110,253,.2); /* 薄い外枠 */
+}
+.changelog .ch-line {
+  border-left: 2px solid var(--bs-gray-700);
+  margin-left: 0.5rem;
+  padding-left: 1rem;
+}
+@media (max-width: 576px) {
+  .changelog .ch-item::before { left: 0.25rem; }
+}

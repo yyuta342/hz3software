@@ -1,0 +1,229 @@
+::-moz-selection {
+  background-color: #008250;
+  color: white;
+}
+
+::selection {
+  background-color: #008250;
+  color: white;
+}
+
+.btn-primary {
+  font-weight: 900;
+  background-color: #008250;
+  border: hidden;
+  transition: 75ms;
+}
+
+.btn-primary:hover, .btn-primary:focus,
+.btn-primary:active, .btn-primary:active:focus, .btn-primary:active:hover, .btn-primary:active.focus,
+.btn-primary.active, .btn-primary.active:focus, .btn-primary.active:hover, .btn-primary.active.focus,
+.open > .dropdown-toggle.btn-primary,
+.open > .dropdown-toggle.btn-primary:hover,
+.open > .dropdown-toggle.btn-primary:focus,
+.open > .dropdown-toggle.btn-primary.focus,
+.btn-primary.disabled:hover, .btn-primary[disabled]:hover, fieldset[disabled] .btn-primary:hover,
+.btn-primary.disabled:focus, .btn-primary[disabled]:focus, fieldset[disabled] .btn-primary:focus,
+.btn-primary.disabled.focus, .btn-primary[disabled].focus, fieldset[disabled] .btn-primary.focus {
+  background: white;
+  color: black;
+  transform: scale(1.05);
+}
+
+.btn-primary.outline {
+  border: 3px solid #008250;
+  color: white;
+}
+
+body {
+  font-family: "M PLUS 2", sans-serif;
+  font-size: 1em;
+  background-color: rgb(8, 8, 8);
+  color: lightgray;
+}
+
+header {
+  margin: 0 0 0 0;
+  background-color: #008250;
+}
+
+btn {
+  margin: 4px 4px 4px 4px;
+}
+
+h3 {
+  text-decoration: underline;
+  font-weight: 700;
+  color: #008250;
+}
+
+.logo {
+  position: absolute;
+  top: 4px;
+  left: 0;
+  border-radius: 0px 4px 4px 0px;
+  background-color: transparent;
+  transition-duration: 0.1s;
+}
+.logo:hover {
+  background-color: #008250;
+}
+.logo:active {
+  background-color: #008250;
+}
+.logo a {
+  display: inline-block;
+  padding: 0 4px 0 4px;
+  transition-duration: 0.1s;
+}
+.logo a:hover {
+  padding: 0 4px 0 8px;
+}
+.logo a:active {
+  padding: 0 4px 0 8px;
+}
+
+.header-bar {
+  padding: 4px;
+}
+
+.store-buttons {
+  margin: 8px 0 64px 0;
+}
+.store-buttons a {
+  margin: 4px 4px 4px 4px;
+}
+
+.jumbotron {
+  padding: 32px 0 0 0;
+}
+.jumbotron h2 {
+  font-size: 1.2em;
+  padding: 24px 0 12px 0;
+}
+
+.youtube-wrapper {
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+  max-width: 640px;
+}
+.youtube-wrapper div {
+  margin: 16px 0 16px 0;
+}
+
+.game-title-logo {
+  padding: 32px;
+}
+
+.gallery a {
+  padding: 4px 4px 4px 4px;
+  border: solid 2px rgba(0, 0, 0, 0);
+  transition: 100ms;
+}
+.gallery a:hover {
+  border: solid 2px #666677;
+  transform: scale(1.05);
+}
+
+article {
+  padding: 4px;
+}
+
+small {
+  font-size: 0.7em;
+}
+
+footer {
+  margin: 16px 0 16px 0;
+}
+
+.badges {
+  margin: 0px 0 24px 0;
+}
+
+.badge {
+  padding: 0 0 0 0;
+  border: solid 2px #111122;
+  margin: 2px 2px 2px 2px;
+  transition: 100ms;
+}
+
+.badge:hover {
+  border: solid 2px #444455;
+  transform: scale(1.05);
+}
+
+.extralight {
+  font-weight: 100;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.black {
+  font-weight: 900;
+}
+
+.zoom-box {
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 4px;
+  margin: 4px 4px 4px 4px;
+}
+.zoom-box img {
+  transition-duration: 0.15s;
+}
+.zoom-box:hover img {
+  transform: scale(1.05);
+}
+.zoom-box:active img {
+  transform: scale(1.1);
+}
+
+.copyright {
+  font-size: 0.6em;
+  text-align: center;
+}
+
+.update {
+  list-style: none;
+  padding: 0;
+}
+
+.date {
+  font-weight: bolder;
+}
+
+.lum-lightbox-inner img.lum-img {
+  max-width: 100%;
+}
+
+.accordion-body {
+  background-color: #111;
+}
+
+.accordion-button:not(.collapsed) {
+  color: #fff !important;
+  background-color: #000 !important;
+}
+
+.accordion-button:link,
+.accordion-button:visited,
+.accordion-button:hover,
+.accordion-button:active {
+  background-color: #008250 !important;
+  color: #fff !important;
+  text-decoration: none !important;
+  border: hidden !important;
+  border-color: transparent !important;
+  box-shadow: 0px !important;
+}
+
+.accordion-button:focus {
+  z-index: 3;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem #000 !important;
+  background-color: #000 !important;
+}/*# sourceMappingURL=base.css.map */

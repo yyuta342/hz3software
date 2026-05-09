@@ -1,0 +1,9 @@
+/* 東雲フォント読み込み */
+@font-face
+{
+	font-family: "Shinonome16";
+	src: 
+		url("../fonts/Shinonome16.woff") format('woff'),
+		url("../fonts/Shinonome16.woff2") format('woff2');
+	font-display: swap;
+}

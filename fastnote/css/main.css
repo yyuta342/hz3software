@@ -1,0 +1,21 @@
+body {
+	padding: 32px;
+}
+
+ul {
+	list-style: none;
+}
+
+img {
+	width: 100%;
+	max-width: 640px;
+}
+
+.center {
+	margin: 0 auto;
+	text-align: center;
+}
+
+footer {
+	padding: 32px;
+}
