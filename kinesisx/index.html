@@ -1,54 +1,69 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109162880-1"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-
-	  gtag('config', 'UA-109162880-1');
-	</script>
-
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=320">
-	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
 	<!-- Font -->
-	<link href="https://fonts.googleapis.com/css?family=M+PLUS+1p" rel="stylesheet">
-    
-	<!-- preloads -->
-	<link rel="preload" href="../css/destyle.css" as="style">
-	<link rel="preload" href="../sass/main.css" as="style">
-    <link rel="preload" href="../css/lity.min.css" as="style">
-	
+	<link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p&display=swap" rel="stylesheet">
+
+	<!-- CSS -->
 	<link rel="stylesheet" href="../css/destyle.css">
-	<link rel="stylesheet" href="../sass/main.css?version=201101_2">
-    <link rel="stylesheet" href="../css/lity.min.css">
+	<link rel="stylesheet" href="../sass/main.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lity@2.4.1/dist/lity.min.css">
+
+	<!-- JS -->
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" defer></script>
+	<script src="https://cdn.jsdelivr.net/npm/lity@2.4.1/dist/lity.min.js" defer></script>
     
-    <script src="../js/jquery-3.5.1.min.js" defer></script>
-    <script src="../js/lity.min.js" defer></script>
-    
+    <!-- SEO -->
+    <meta name="description" content="Kinesis X（キネシス エックス）はサイコキネシスでステージを回転させる全36ステージのアクションゲーム。PC・Mac対応。HZ3 Software（yuta）開発。">
+    <link rel="canonical" href="https://hz3software.com/kinesisx/">
+
     <!-- OGP -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@yyuta342">
     <meta name="twitter:creator" content="@yyuta342">
-    <meta name="og:title" content="Kinesis X / HZ3 Software">
-    <meta name="og:description" content="個人ゲームデザイナーyutaが運営するゲーム・ドット絵制作スタジオです。">
-    <meta name="og:image" content="https://hz3software.com/images/twitcard_hz3software.png">
-    <meta name="og:url" content="https://hz3software.com/kinesisx/">
-    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Kinesis X（キネシス エックス）| HZ3 Software">
+    <meta property="og:description" content="サイコキネシスでステージを回転させる全36ステージのアクションゲーム。PC・Mac対応。">
+    <meta property="og:image" content="https://hz3software.com/images/twitcard_hz3software.png">
+    <meta property="og:url" content="https://hz3software.com/kinesisx/">
+
     <!-- Icons -->
     <link rel="icon" type="image/png" href="https://hz3software.com/images/hz3software_favicon.png">
 	<link rel="apple-touch-icon" href="https://hz3software.com/images/hz3software_appicon.png">
-    
-	<title>Kinesis X / HZ3 Software</title>
+
+	<title>Kinesis X（キネシス エックス）| HZ3 Software</title>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoGame",
+      "name": "Kinesis X",
+      "alternateName": "キネシス エックス",
+      "description": "サイコキネシス（PK）を使ってステージを90度ずつ回転させ、全36ステージのクリアを目指すアクションゲーム。",
+      "url": "https://hz3software.com/kinesisx/",
+      "image": "https://hz3software.com/images/eyecatch_kinesisx.png",
+      "author": { "@type": "Person", "name": "yuta", "url": "https://hz3software.com/" },
+      "publisher": { "@type": "Organization", "name": "HZ3 Software", "url": "https://hz3software.com/" },
+      "datePublished": "2019-03-22",
+      "gamePlatform": ["PC", "macOS"],
+      "inLanguage": "ja",
+      "offers": {
+        "@type": "Offer",
+        "price": "300",
+        "priceCurrency": "JPY"
+      }
+    }
+    </script>
  </head>
 
 <body>
 	<div class="wrapper">
 		<header>
-			<a class="link" href="../"><img src="../images/hz3software.png" class="title" width="128" height="32"></a>
+			<a class="link" href="../"><img src="../images/hz3software.png" class="title" width="128" height="32" alt="HZ3 Software"></a>
 		</header>
 		
 		<div class="line"></div>
