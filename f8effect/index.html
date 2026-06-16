@@ -247,6 +247,9 @@
 			const baBefore = baCompare.querySelector('.ba-before');
 			const baHandle = baCompare.querySelector('.ba-handle');
 			let baDragging = false;
+			let baAxisLocked = null; // 'x'(スライダー操作) / null(未判定)
+			let baStartX = 0;
+			let baStartY = 0;
 
 			function baSetPosition(percent)
 			{
@@ -264,14 +267,36 @@
 			baCompare.addEventListener('pointerdown', (e) =>
 			{
 				baDragging = true;
-				baMoveFromClientX(e.clientX);
+				baAxisLocked = null;
+				baStartX = e.clientX;
+				baStartY = e.clientY;
 			});
 			window.addEventListener('pointermove', (e) =>
 			{
-				if( baDragging ) baMoveFromClientX(e.clientX);
-			});
-			window.addEventListener('pointerup', () => { baDragging = false; });
-			window.addEventListener('pointercancel', () => { baDragging = false; });
+				if( !baDragging ) return;
+
+				if( baAxisLocked === null )
+				{
+					const dx = Math.abs(e.clientX - baStartX);
+					const dy = Math.abs(e.clientY - baStartY);
+
+					if( dx < 6 && dy < 6 ) return; // 小さな揺れは判定保留
+
+					if( dy > dx )
+					{
+						// 縦方向の動き → スクロールとみなしてスライダー操作を中止
+						baDragging = false;
+						return;
+					}
+
+					baAxisLocked = 'x';
+				}
+
+				e.preventDefault();
+				baMoveFromClientX(e.clientX);
+			}, { passive: false });
+			window.addEventListener('pointerup', () => { baDragging = false; baAxisLocked = null; });
+			window.addEventListener('pointercancel', () => { baDragging = false; baAxisLocked = null; });
 
 			baSetPosition(50);
 		}
