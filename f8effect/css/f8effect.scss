@@ -1,0 +1,134 @@
+.main-art
+{
+	img
+	{
+		margin: 0 auto;
+		text-align: center;
+	}
+
+	.main-text
+	{
+		margin: 0 auto;
+		padding: 16px 12px;
+		text-align: center;
+
+		h2
+		{
+			font-size: clamp(0.6rem, 3.6vw, 1.4em);
+			font-weight: 900;
+			white-space: nowrap;
+		}
+	}
+}
+
+header
+{
+	background: rgba($color: #000000, $alpha: 0.0);
+}
+
+.ba-compare
+{
+	position: relative;
+	max-width: 320px;
+	margin: 16px auto;
+	aspect-ratio: 1242 / 2688;
+	overflow: hidden;
+	border-radius: 12px;
+	user-select: none;
+	touch-action: none;
+	cursor: ew-resize;
+}
+
+.ba-img
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+	pointer-events: none;
+}
+
+.ba-before
+{
+	clip-path: inset(0 50% 0 0);
+}
+
+.ba-handle
+{
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 3px;
+	height: 100%;
+	background: #fff;
+	transform: translateX(-50%);
+	pointer-events: none;
+
+	&::before
+	{
+		content: "";
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 32px;
+		height: 32px;
+		border-radius: 50%;
+		background: #fff;
+		transform: translate(-50%, -50%);
+	}
+}
+
+.icon-row
+{
+	display: flex;
+	justify-content: center;
+	gap: 16px;
+	margin: 16px 0;
+
+	img
+	{
+		border-radius: 20%;
+		width: 96px;
+		height: 96px;
+	}
+}
+
+.feature-list
+{
+	list-style: none;
+	padding: 0;
+
+	li
+	{
+		padding: 6px 0;
+		border-bottom: 1px solid #222;
+	}
+
+	li:last-child
+	{
+		border-bottom: none;
+	}
+
+	strong
+	{
+		color: #eee;
+	}
+}
+
+h3
+{
+	color: #eee;
+}
+
+a
+{
+	color: #ccc;
+
+	&:hover, &:focus
+	{
+		color: #fff;
+	}
+}

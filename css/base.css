@@ -209,6 +209,11 @@ footer {
   background-color: #000 !important;
 }
 
+.accordion-button.collapsed {
+  color: #fff !important;
+  background-color: #000 !important;
+}
+
 .accordion-button:link,
 .accordion-button:visited,
 .accordion-button:hover,

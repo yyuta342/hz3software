@@ -254,9 +254,15 @@ footer
 	background-color: #111;
 }
 
-.accordion-button:not(.collapsed) 
+.accordion-button:not(.collapsed)
 {
 	color: #fff  !important;
+	background-color: #000 !important;
+}
+
+.accordion-button.collapsed
+{
+	color: #fff !important;
 	background-color: #000 !important;
 }
 
