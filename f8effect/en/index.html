@@ -95,6 +95,11 @@
 				</div>
 			</article>
 
+			<!-- Hashtag -->
+			<article class="text-center">
+				<p class="text-muted">Share your shots on social media with <a href="https://twitter.com/intent/tweet?hashtags=F8Effect" target="_blank"><strong>#F8Effect</strong></a></p>
+			</article>
+
 			<!-- Icons -->
 			<article class="icon-row text-center">
 				<a href="../images/f8effect_icon_b.png" class="luminous">
@@ -267,6 +272,7 @@
 				if( baDragging ) baMoveFromClientX(e.clientX);
 			});
 			window.addEventListener('pointerup', () => { baDragging = false; });
+			window.addEventListener('pointercancel', () => { baDragging = false; });
 
 			baSetPosition(50);
 		}

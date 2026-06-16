@@ -35,7 +35,7 @@ header
 	overflow: hidden;
 	border-radius: 12px;
 	user-select: none;
-	touch-action: none;
+	touch-action: pan-y;
 	cursor: ew-resize;
 }
 
