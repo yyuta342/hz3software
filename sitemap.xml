@@ -9,6 +9,22 @@
   </url>
 
   <url>
+    <loc>https://hz3software.com/f8effect/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://hz3software.com/f8effect/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hz3software.com/f8effect/en/"/>
+  </url>
+
+  <url>
+    <loc>https://hz3software.com/f8effect/en/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://hz3software.com/f8effect/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hz3software.com/f8effect/en/"/>
+  </url>
+
+  <url>
     <loc>https://hz3software.com/st/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
