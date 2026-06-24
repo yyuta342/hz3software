@@ -111,3 +111,7 @@ a {
 a:hover, a:focus {
 	color: #fff;
 }
+
+.lang-switch {
+	font-size: 0.96em;
+}
