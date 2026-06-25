@@ -202,63 +202,65 @@
 					<div class="col-12 col-md-4"><a class="btn btn-secondary w-100" data-bs-toggle="collapse" href="#v100Collapse" role="button" aria-controls="v100Collapse">v1.0.0 更新内容</a></div>
 				</div>
 
-				<div class="collapse collapse-dark" id="v104Collapse">
-					<div class="card card-body bg-dark text-start mb-2">
-						<h4>新機能・改善</h4>
-						<ul>
-							<li>メイン画面にクイックメニューを追加。ワンタップでカラーパレット・プリセット・解像度のカルーセルを切り替えられるようになりました。</li>
-							<li>グリッド表示をシンプルに整理しました（なし / 三分割法 / 中央十字）。</li>
-							<li>起動時の読み込み時間を短縮しました。</li>
-						</ul>
-						<h4>不具合の修正</h4>
-						<ul>
-							<li>解像度（ピクセル数）を変更した際に、表示位置がずれて描画されることがある問題を修正しました。</li>
-							<li>画像編集モードで回転すると画像ごと回ってしまう問題を修正。解像度（フレームの向き）だけが切り替わり、画像は正立したまま表示されるようになりました。</li>
-							<li>画像編集モードで回転後に画像が引き伸ばされて歪む問題を修正しました。</li>
-							<li>画像を読み込んだ際に表示が極端に小さくなることがある問題を修正しました。</li>
-							<li>画像を読み込み直した際にズーム・位置がリセットされず、表示がはみ出すことがある問題を修正しました。</li>
-							<li>プリセットを変更した際に、メニュー側の選択表示が更新されないことがある問題を修正しました。</li>
-						</ul>
-						<p>その他、細かな調整と安定性の改善を行いました。</p>
+				<div id="versionAccordion">
+					<div class="collapse collapse-dark" id="v104Collapse" data-bs-parent="#versionAccordion">
+						<div class="card card-body bg-dark text-start mb-2">
+							<h4>新機能・改善</h4>
+							<ul>
+								<li>メイン画面にクイックメニューを追加。ワンタップでカラーパレット・プリセット・解像度のカルーセルを切り替えられるようになりました。</li>
+								<li>グリッド表示をシンプルに整理しました（なし / 三分割法 / 中央十字）。</li>
+								<li>起動時の読み込み時間を短縮しました。</li>
+							</ul>
+							<h4>不具合の修正</h4>
+							<ul>
+								<li>解像度（ピクセル数）を変更した際に、表示位置がずれて描画されることがある問題を修正しました。</li>
+								<li>画像編集モードで回転すると画像ごと回ってしまう問題を修正。解像度（フレームの向き）だけが切り替わり、画像は正立したまま表示されるようになりました。</li>
+								<li>画像編集モードで回転後に画像が引き伸ばされて歪む問題を修正しました。</li>
+								<li>画像を読み込んだ際に表示が極端に小さくなることがある問題を修正しました。</li>
+								<li>画像を読み込み直した際にズーム・位置がリセットされず、表示がはみ出すことがある問題を修正しました。</li>
+								<li>プリセットを変更した際に、メニュー側の選択表示が更新されないことがある問題を修正しました。</li>
+							</ul>
+							<p>その他、細かな調整と安定性の改善を行いました。</p>
+						</div>
 					</div>
-				</div>
-				<div class="collapse collapse-dark" id="v103Collapse">
-					<div class="card card-body bg-dark text-start mb-2">
-						<h4>バグ修正</h4>
-						<p>細かなバグ修正と安定性の改善を行いました。</p>
+					<div class="collapse collapse-dark" id="v103Collapse" data-bs-parent="#versionAccordion">
+						<div class="card card-body bg-dark text-start mb-2">
+							<h4>バグ修正</h4>
+							<p>細かなバグ修正と安定性の改善を行いました。</p>
+						</div>
 					</div>
-				</div>
-				<div class="collapse collapse-dark" id="v102Collapse">
-					<div class="card card-body bg-dark text-start mb-2">
-						<h4>バグ修正・機能追加</h4>
-						<ul>
-							<li>F8 Effect ロゴを削除できるオプションを追加しました。</li>
-							<li>細かいバグを修正しました。</li>
-						</ul>
+					<div class="collapse collapse-dark" id="v102Collapse" data-bs-parent="#versionAccordion">
+						<div class="card card-body bg-dark text-start mb-2">
+							<h4>バグ修正・機能追加</h4>
+							<ul>
+								<li>F8 Effect ロゴを削除できるオプションを追加しました。</li>
+								<li>細かいバグを修正しました。</li>
+							</ul>
+						</div>
 					</div>
-				</div>
-				<div class="collapse collapse-dark" id="v101Collapse">
-					<div class="card card-body bg-dark text-start mb-2">
-						<h4>バグ修正</h4>
-						<ul>
-							<li>Android でカメラパーミッションを初回付与した後、カメラが表示されないバグを修正しました。</li>
-							<li>Android でアプリ内購入の価格が正常に表示されないバグを修正しました。</li>
-						</ul>
+					<div class="collapse collapse-dark" id="v101Collapse" data-bs-parent="#versionAccordion">
+						<div class="card card-body bg-dark text-start mb-2">
+							<h4>バグ修正</h4>
+							<ul>
+								<li>Android でカメラパーミッションを初回付与した後、カメラが表示されないバグを修正しました。</li>
+								<li>Android でアプリ内購入の価格が正常に表示されないバグを修正しました。</li>
+							</ul>
+						</div>
 					</div>
-				</div>
-				<div class="collapse collapse-dark" id="v100Collapse">
-					<div class="card card-body bg-dark text-start mb-2">
-						<h4>主な機能</h4>
-						<ul>
-							<li>約100種類のカラーパレットを収録しました。</li>
-							<li>カメラ映像にリアルタイムでレトロエフェクトを適用できます。</li>
-							<li>ディザリング、コントラスト、ビネット、CRTカーブなどのエフェクトを搭載しました。</li>
-							<li>14種類のレトロ解像度プリセット（PICO-8、ゲームボーイ、NES等）を搭載しました。</li>
-							<li>タイマー撮影（3・5・10秒）に対応しました。</li>
-							<li>アルバムの画像を読み込んでエフェクトをかける機能を搭載しました。</li>
-							<li>日本語・English・한국어・中文に対応しました。</li>
-							<li>iOS・Android・Windows・macOS に対応しました。</li>
-						</ul>
+					<div class="collapse collapse-dark" id="v100Collapse" data-bs-parent="#versionAccordion">
+						<div class="card card-body bg-dark text-start mb-2">
+							<h4>主な機能</h4>
+							<ul>
+								<li>約100種類のカラーパレットを収録しました。</li>
+								<li>カメラ映像にリアルタイムでレトロエフェクトを適用できます。</li>
+								<li>ディザリング、コントラスト、ビネット、CRTカーブなどのエフェクトを搭載しました。</li>
+								<li>14種類のレトロ解像度プリセット（PICO-8、ゲームボーイ、NES等）を搭載しました。</li>
+								<li>タイマー撮影（3・5・10秒）に対応しました。</li>
+								<li>アルバムの画像を読み込んでエフェクトをかける機能を搭載しました。</li>
+								<li>日本語・English・한국어・中文に対応しました。</li>
+								<li>iOS・Android・Windows・macOS に対応しました。</li>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</article>
