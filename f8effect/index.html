@@ -168,6 +168,9 @@
 				<h3>更新情報</h3>
 				<ul class="update">
 					<li>
+						<div class="update-text">v1.0.4 を配信しました。</div>
+					</li>
+					<li>
 						<div class="update-text">v1.0.2 を配信しました。</div>
 					</li>
 					<li>
@@ -179,7 +182,33 @@
 				</ul>
 
 				<p class="text-center">
-					<a class="btn btn-primary" data-bs-toggle="collapse" href="#v102Collapse" role="button" aria-controls="v102Collapse">
+					<a class="btn btn-primary" data-bs-toggle="collapse" href="#v104Collapse" role="button" aria-controls="v104Collapse">
+						v1.0.4 更新内容
+					</a>
+					<div class="collapse collapse-dark" id="v104Collapse">
+						<div class="card card-body bg-dark text-start">
+							<h4>新機能・改善</h4>
+							<ul>
+								<li>メイン画面にクイックメニューを追加。ワンタップでカラーパレット・プリセット・解像度のカルーセルを切り替えられるようになりました。</li>
+								<li>グリッド表示をシンプルに整理しました（なし / 三分割法 / 中央十字）。</li>
+								<li>起動時の読み込み時間を短縮しました。</li>
+							</ul>
+							<h4>不具合の修正</h4>
+							<ul>
+								<li>解像度（ピクセル数）を変更した際に、表示位置がずれて描画されることがある問題を修正しました。</li>
+								<li>画像編集モードで回転すると画像ごと回ってしまう問題を修正。解像度（フレームの向き）だけが切り替わり、画像は正立したまま表示されるようになりました。</li>
+								<li>画像編集モードで回転後に画像が引き伸ばされて歪む問題を修正しました。</li>
+								<li>画像を読み込んだ際に表示が極端に小さくなることがある問題を修正しました。</li>
+								<li>画像を読み込み直した際にズーム・位置がリセットされず、表示がはみ出すことがある問題を修正しました。</li>
+								<li>プリセットを変更した際に、メニュー側の選択表示が更新されないことがある問題を修正しました。</li>
+							</ul>
+							<p>その他、細かな調整と安定性の改善を行いました。</p>
+						</div>
+					</div>
+				</p>
+
+				<p class="text-center">
+					<a class="btn btn-secondary" data-bs-toggle="collapse" href="#v102Collapse" role="button" aria-controls="v102Collapse">
 						v1.0.2 更新内容
 					</a>
 					<div class="collapse collapse-dark" id="v102Collapse">
