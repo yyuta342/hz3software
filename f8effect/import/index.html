@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>F8 Effect - プリセットを開く</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; padding: 40px 20px; background: #111; color: #eee; }
+    h1 { font-size: 1.2em; margin-bottom: 8px; }
+    p  { color: #aaa; font-size: 0.9em; margin-bottom: 32px; }
+    .btn {
+      display: inline-block; padding: 14px 28px; border-radius: 8px;
+      background: #4a90d9; color: #fff; text-decoration: none;
+      font-size: 1em; margin: 8px;
+    }
+    .btn.secondary { background: #333; color: #ccc; }
+  </style>
+</head>
+<body>
+  <h1>F8 Effect</h1>
+  <p>プリセットを F8 Effect アプリで開きます。<br>アプリがインストールされていない場合はストアへ移動します。</p>
+  <div id="actions"></div>
+
+  <script>
+    (function () {
+      var data = new URLSearchParams(location.search).get('data') || '';
+      var deepLink = 'f8effect://import?data=' + encodeURIComponent(data);
+
+      var ua = navigator.userAgent;
+      var isAndroid = /Android/i.test(ua);
+      var isIOS = /iPhone|iPad|iPod/i.test(ua);
+
+      var storeUrl = isIOS
+        ? 'https://apps.apple.com/app/id6744942892'
+        : 'https://play.google.com/store/apps/details?id=com.hz3software.f8effect';
+
+      var div = document.getElementById('actions');
+      div.innerHTML =
+        '<a class="btn" href="' + deepLink + '">アプリで開く</a><br>' +
+        '<a class="btn secondary" href="' + storeUrl + '">ストアへ</a>';
+
+      // App Links が機能している場合はこのページは表示されない。
+      // 表示された場合（アプリ未インストール等）はボタンで誘導する。
+      if (data && (isAndroid || isIOS)) {
+        setTimeout(function () { location.href = deepLink; }, 300);
+      }
+    })();
+  </script>
+</body>
+</html>

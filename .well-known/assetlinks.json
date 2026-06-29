@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.hz3software.f8effect",
+      "sha256_cert_fingerprints": [
+        "55:35:55:07:B9:BF:78:CF:65:A1:9D:84:D6:43:3E:B1:54:FA:B2:19:38:11:0F:76:B1:4E:23:D1:34:C9:A8:76"
+      ]
+    }
+  }
+]
