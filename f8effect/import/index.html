@@ -105,6 +105,37 @@
       font-weight: 500;
     }
 
+    .store-section {
+      margin-top: 26px;
+      padding-top: 22px;
+      border-top: 1px solid var(--border);
+    }
+
+    .store-label {
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 0.82rem;
+      line-height: 1.5;
+    }
+
+    .store-badges {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .store-badge {
+      display: block;
+      line-height: 0;
+    }
+
+    .store-badge img {
+      display: block;
+      width: 176px;
+      height: auto;
+    }
+
     .note {
       margin: 20px 0 0;
       font-size: 0.78rem;
@@ -139,6 +170,13 @@
       アプリが自動で開かない場合は、上のボタンをタップしてください。
     </p>
 
+    <section class="store-section" aria-labelledby="store-label">
+      <p class="store-label" id="store-label">
+        F8 Effectをお持ちでない方
+      </p>
+      <div class="store-badges" id="store-badges"></div>
+    </section>
+
     <a class="home-link" href="../">F8 Effect 公式サイト</a>
   </main>
 
@@ -157,28 +195,28 @@
 
       var appStoreUrl = 'https://apps.apple.com/app/f8-effect/id6777391027';
       var playStoreUrl = 'https://play.google.com/store/apps/details?id=com.hz3software.f8effect';
-      var storeUrl = isIOS ? appStoreUrl : isAndroid ? playStoreUrl : '../';
 
       var copy = isJapanese
         ? {
             title: 'F8 Effect',
             description: '共有されたプリセットを<br>F8 Effectアプリで開きます。',
             open: 'アプリで開く',
-            store: isIOS ? 'App Storeで見る' : isAndroid ? 'Google Playで見る' : '公式サイトを見る',
-            note: 'アプリが自動で開かない場合は、上のボタンをタップしてください。'
+            note: 'アプリが自動で開かない場合は、上のボタンをタップしてください。',
+            storeLabel: 'F8 Effectをお持ちでない方'
           }
         : {
             title: 'F8 Effect',
             description: 'Open the shared preset<br>in the F8 Effect app.',
             open: 'Open in F8 Effect',
-            store: isIOS ? 'View on the App Store' : isAndroid ? 'View on Google Play' : 'Visit the official site',
-            note: 'If the app does not open automatically, tap the button above.'
+            note: 'If the app does not open automatically, tap the button above.',
+            storeLabel: 'Don’t have F8 Effect yet?'
           };
 
       document.documentElement.lang = isJapanese ? 'ja' : 'en';
       document.getElementById('title').textContent = copy.title;
       document.getElementById('description').innerHTML = copy.description;
       document.getElementById('note').textContent = copy.note;
+      document.getElementById('store-label').textContent = copy.storeLabel;
 
       var actions = document.getElementById('actions');
       var openButton = document.createElement('a');
@@ -187,11 +225,37 @@
       openButton.textContent = copy.open;
       actions.appendChild(openButton);
 
-      var storeButton = document.createElement('a');
-      storeButton.className = 'btn secondary';
-      storeButton.href = storeUrl;
-      storeButton.textContent = copy.store;
-      actions.appendChild(storeButton);
+      var storeBadges = document.getElementById('store-badges');
+
+      function addStoreBadge(url, imageName, label) {
+        var link = document.createElement('a');
+        link.className = 'store-badge';
+        link.href = url;
+        link.setAttribute('aria-label', label);
+
+        var image = document.createElement('img');
+        image.src = '../../images/' + imageName;
+        image.width = 200;
+        image.height = 68;
+        image.alt = label;
+
+        link.appendChild(image);
+        storeBadges.appendChild(link);
+      }
+
+      var languageSuffix = isJapanese ? 'ja' : 'en';
+      if (isIOS || !isAndroid) {
+        addStoreBadge(
+          appStoreUrl,
+          'badge_appstore_' + languageSuffix + '.png',
+          isJapanese ? 'App Storeからダウンロード' : 'Download on the App Store');
+      }
+      if (isAndroid || !isIOS) {
+        addStoreBadge(
+          playStoreUrl,
+          'badge_googleplay_' + languageSuffix + '.png',
+          isJapanese ? 'Google Playで手に入れよう' : 'Get it on Google Play');
+      }
 
       // App Linksが利用できない場合は、登録済みカスタムスキームでアプリを起動する。
       if (data && (isAndroid || isIOS)) {
