@@ -2,47 +2,199 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0d0d0d">
+  <meta name="description" content="共有されたプリセットをF8 Effectで開きます。">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="F8 Effect - 共有プリセット">
+  <meta property="og:description" content="共有されたプリセットをF8 Effectアプリで開きます。">
+  <meta property="og:image" content="https://hz3software.com/f8effect/images/f8effect_header_square.png">
+
+  <link rel="icon" href="../images/favicon.ico">
+  <link rel="apple-touch-icon" href="../images/f8effect_icon_b.png">
   <title>F8 Effect - プリセットを開く</title>
+
   <style>
-    body { font-family: sans-serif; text-align: center; padding: 40px 20px; background: #111; color: #eee; }
-    h1 { font-size: 1.2em; margin-bottom: 8px; }
-    p  { color: #aaa; font-size: 0.9em; margin-bottom: 32px; }
-    .btn {
-      display: inline-block; padding: 14px 28px; border-radius: 8px;
-      background: #4a90d9; color: #fff; text-decoration: none;
-      font-size: 1em; margin: 8px;
+    :root {
+      color-scheme: dark;
+      --background: #0d0d0d;
+      --panel: #181818;
+      --border: #303030;
+      --text: #f4f4f4;
+      --muted: #aaa;
+      --primary: #f4f4f4;
+      --primary-text: #111;
     }
-    .btn.secondary { background: #333; color: #ccc; }
+
+    * { box-sizing: border-box; }
+
+    html, body { min-height: 100%; }
+
+    body {
+      margin: 0;
+      padding:
+        max(32px, env(safe-area-inset-top))
+        max(20px, env(safe-area-inset-right))
+        max(32px, env(safe-area-inset-bottom))
+        max(20px, env(safe-area-inset-left));
+      display: grid;
+      place-items: center;
+      background: var(--background);
+      color: var(--text);
+      font-family:
+        -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans",
+        "Yu Gothic UI", sans-serif;
+      text-align: center;
+    }
+
+    main {
+      width: min(100%, 380px);
+      padding: 32px 24px 26px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background: var(--panel);
+      box-shadow: 0 18px 60px rgba(0, 0, 0, 0.35);
+    }
+
+    .app-icon {
+      display: block;
+      width: 104px;
+      height: 104px;
+      margin: 0 auto 20px;
+      border-radius: 22%;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: 1.45rem;
+      line-height: 1.3;
+    }
+
+    p {
+      margin: 0 0 26px;
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.75;
+    }
+
+    .actions {
+      display: grid;
+      gap: 12px;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 14px 20px;
+      border: 1px solid var(--primary);
+      border-radius: 10px;
+      background: var(--primary);
+      color: var(--primary-text);
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1.2;
+      text-decoration: none;
+    }
+
+    .btn.secondary {
+      border-color: var(--border);
+      background: transparent;
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .note {
+      margin: 20px 0 0;
+      font-size: 0.78rem;
+      line-height: 1.6;
+    }
+
+    .home-link {
+      display: inline-block;
+      margin-top: 22px;
+      color: #888;
+      font-size: 0.78rem;
+      text-decoration: none;
+    }
   </style>
 </head>
 <body>
-  <h1>F8 Effect</h1>
-  <p>プリセットを F8 Effect アプリで開きます。<br>アプリがインストールされていない場合はストアへ移動します。</p>
-  <div id="actions"></div>
+  <main>
+    <img
+      class="app-icon"
+      src="../images/f8effect_icon_b.webp"
+      width="104"
+      height="104"
+      alt="F8 Effect">
+
+    <h1 id="title">F8 Effect</h1>
+    <p id="description">
+      共有されたプリセットを<br>F8 Effectアプリで開きます。
+    </p>
+
+    <div class="actions" id="actions"></div>
+    <p class="note" id="note">
+      アプリが自動で開かない場合は、上のボタンをタップしてください。
+    </p>
+
+    <a class="home-link" href="../">F8 Effect 公式サイト</a>
+  </main>
 
   <script>
     (function () {
-      var data = new URLSearchParams(location.search).get('data') || '';
+      var params = new URLSearchParams(location.search);
+      var data = params.get('data') || '';
       var deepLink = 'f8effect://import?data=' + encodeURIComponent(data);
-
       var ua = navigator.userAgent;
       var isAndroid = /Android/i.test(ua);
       var isIOS = /iPhone|iPad|iPod/i.test(ua);
+      var isJapanese = /^ja\b/i.test(navigator.language || '');
 
-      var storeUrl = isIOS
-        ? 'https://apps.apple.com/app/id6744942892'
-        : 'https://play.google.com/store/apps/details?id=com.hz3software.f8effect';
+      var appStoreUrl = 'https://apps.apple.com/jp/app/f8-effect/id6777391027';
+      var playStoreUrl = 'https://play.google.com/store/apps/details?id=com.hz3software.f8effect';
+      var storeUrl = isIOS ? appStoreUrl : isAndroid ? playStoreUrl : '../';
 
-      var div = document.getElementById('actions');
-      div.innerHTML =
-        '<a class="btn" href="' + deepLink + '">アプリで開く</a><br>' +
-        '<a class="btn secondary" href="' + storeUrl + '">ストアへ</a>';
+      var copy = isJapanese
+        ? {
+            title: 'F8 Effect',
+            description: '共有されたプリセットを<br>F8 Effectアプリで開きます。',
+            open: 'アプリで開く',
+            store: isIOS ? 'App Storeで見る' : isAndroid ? 'Google Playで見る' : '公式サイトを見る',
+            note: 'アプリが自動で開かない場合は、上のボタンをタップしてください。'
+          }
+        : {
+            title: 'F8 Effect',
+            description: 'Open the shared preset<br>in the F8 Effect app.',
+            open: 'Open in F8 Effect',
+            store: isIOS ? 'View on the App Store' : isAndroid ? 'View on Google Play' : 'Visit the official site',
+            note: 'If the app does not open automatically, tap the button above.'
+          };
 
-      // App Links が機能している場合はこのページは表示されない。
-      // 表示された場合（アプリ未インストール等）はボタンで誘導する。
+      document.documentElement.lang = isJapanese ? 'ja' : 'en';
+      document.getElementById('title').textContent = copy.title;
+      document.getElementById('description').innerHTML = copy.description;
+      document.getElementById('note').textContent = copy.note;
+
+      var actions = document.getElementById('actions');
+      var openButton = document.createElement('a');
+      openButton.className = 'btn';
+      openButton.href = deepLink;
+      openButton.textContent = copy.open;
+      actions.appendChild(openButton);
+
+      var storeButton = document.createElement('a');
+      storeButton.className = 'btn secondary';
+      storeButton.href = storeUrl;
+      storeButton.textContent = copy.store;
+      actions.appendChild(storeButton);
+
+      // App Linksが利用できない場合は、登録済みカスタムスキームでアプリを起動する。
       if (data && (isAndroid || isIOS)) {
-        setTimeout(function () { location.href = deepLink; }, 300);
+        setTimeout(function () {
+          location.href = deepLink;
+        }, 450);
       }
     })();
   </script>
