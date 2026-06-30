@@ -149,10 +149,13 @@
       var deepLink = 'f8effect://import?data=' + encodeURIComponent(data);
       var ua = navigator.userAgent;
       var isAndroid = /Android/i.test(ua);
-      var isIOS = /iPhone|iPad|iPod/i.test(ua);
+      // iPadOSは「デスクトップ用Webサイト」でMacintoshを名乗るため、
+      // タッチポイントも併用してiOS/iPadOSを判定する。
+      var isIOS = /iPhone|iPad|iPod/i.test(ua)
+        || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
       var isJapanese = /^ja\b/i.test(navigator.language || '');
 
-      var appStoreUrl = 'https://apps.apple.com/jp/app/f8-effect/id6777391027';
+      var appStoreUrl = 'https://apps.apple.com/app/f8-effect/id6777391027';
       var playStoreUrl = 'https://play.google.com/store/apps/details?id=com.hz3software.f8effect';
       var storeUrl = isIOS ? appStoreUrl : isAndroid ? playStoreUrl : '../';
 
