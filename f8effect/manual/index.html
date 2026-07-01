@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- CSS -->
+	<link href="//cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link href="../../css/base.css" rel="stylesheet">
+	<link href="../css/f8effect.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/luminous-lightbox@2.3.2/dist/luminous-basic.min.css" />
+	<style>
+		/* ── Sections ─────────────────────────────────── */
+		article {
+			padding: 4px 0;
+			opacity: 0;
+			transform: translateY(16px);
+			transition: opacity 0.45s ease-out, transform 0.45s ease-out;
+		}
+		article.visible {
+			opacity: 1;
+			transform: none;
+		}
+
+		/* ── Headings ──────────────────────────────────── */
+		article > h3 {
+			font-size: 1.15em;
+			font-weight: 900;
+			color: #fff;
+			padding-bottom: 8px;
+			margin-bottom: 20px;
+			border-bottom: 2px solid #27B58B;
+		}
+		article h4 {
+			color: #27B58B;
+			font-size: 0.82em;
+			font-weight: 700;
+			text-transform: uppercase;
+			letter-spacing: 0.08em;
+			margin-top: 28px;
+			margin-bottom: 10px;
+		}
+
+		/* ── HR ────────────────────────────────────────── */
+		hr {
+			border-color: #1e1e1e;
+			margin: 36px 0;
+		}
+
+		/* ── TOC ───────────────────────────────────────── */
+		.toc-list {
+			list-style: none;
+			padding: 0;
+			counter-reset: toc;
+		}
+		.toc-list li {
+			counter-increment: toc;
+			display: flex;
+			align-items: center;
+			gap: 10px;
+			padding: 7px 4px;
+			border-bottom: 1px solid #1c1c1c;
+		}
+		.toc-list li:last-child { border-bottom: none; }
+		.toc-list li::before {
+			content: counter(toc, decimal-leading-zero);
+			color: #27B58B;
+			font-size: 0.72em;
+			font-weight: 700;
+			min-width: 22px;
+			flex-shrink: 0;
+		}
+		.toc-list a {
+			color: #bbb;
+			text-decoration: none;
+			transition: color 0.15s;
+		}
+		.toc-list a:hover { color: #27B58B; }
+
+		/* ── Annotation list ───────────────────────────── */
+		.annotation-list {
+			list-style: none;
+			padding: 0;
+		}
+		.annotation-list li {
+			display: flex;
+			align-items: flex-start;
+			gap: 10px;
+			padding: 8px 6px;
+			border-radius: 8px;
+			border-bottom: 1px solid #1c1c1c;
+			transition: background 0.18s;
+		}
+		.annotation-list li:last-child { border-bottom: none; }
+		.annotation-list li:hover { background: rgba(39, 181, 139, 0.07); }
+
+		/* ── Annotation badge ──────────────────────────── */
+		.annotation-num {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			min-width: 24px;
+			height: 24px;
+			border-radius: 50%;
+			background: #27B58B;
+			border: 1.5px solid rgba(255, 255, 255, 0.75);
+			color: #fff;
+			font-size: 0.78em;
+			font-weight: 700;
+			flex-shrink: 0;
+			margin-top: 2px;
+		}
+
+		/* ── Annotation image ──────────────────────────── */
+		.annotation-img {
+			max-width: 320px;
+			width: 100%;
+			border-radius: 14px;
+			box-shadow: 0 4px 24px rgba(0, 0, 0, 0.55);
+			cursor: zoom-in;
+			transition: transform 0.22s ease, box-shadow 0.22s ease;
+		}
+		.annotation-img:hover {
+			transform: scale(1.02);
+			box-shadow: 0 8px 36px rgba(0, 0, 0, 0.7);
+		}
+
+		/* ── dl ────────────────────────────────────────── */
+		dl dt {
+			color: #eee;
+			font-weight: 700;
+			margin-top: 14px;
+		}
+		dl dd {
+			color: #999;
+			margin-left: 0;
+			padding: 5px 0 5px 14px;
+			border-left: 2px solid #27B58B;
+			margin-bottom: 2px;
+		}
+	</style>
+
+	<!-- Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=M+PLUS+2:wght@200;400;700;900&display=swap" rel="stylesheet">
+
+	<!-- SEO -->
+	<meta name="description" content="F8 Effect の使い方マニュアル。画面各ボタンの機能、カラーパレット・プリセット・エフェクトの操作方法を解説します。">
+	<link rel="canonical" href="https://hz3software.com/f8effect/manual/">
+	<link rel="alternate" hreflang="ja" href="https://hz3software.com/f8effect/manual/">
+	<link rel="alternate" hreflang="en" href="https://hz3software.com/f8effect/manual/en/">
+
+	<!-- OGP -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:site" content="@yyuta342">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="F8 Effect マニュアル | HZ3 Software">
+	<meta property="og:description" content="F8 Effect の使い方マニュアル。画面各ボタンの機能、カラーパレット・プリセット・エフェクトの操作方法を解説します。">
+	<meta property="og:image" content="https://hz3software.com/f8effect/images/f8effect_ogp.png">
+	<meta property="og:url" content="https://hz3software.com/f8effect/manual/">
+
+	<!-- Icons -->
+	<link rel="icon" type="image/png" href="https://hz3software.com/f8effect/images/favicon.ico">
+	<link rel="apple-touch-icon" href="https://hz3software.com/f8effect/images/apple-touch-icon-180x180.png">
+
+	<title>F8 Effect マニュアル | HZ3 Software</title>
+</head>
+<body>
+	<header>
+		<div class="main-art">
+			<img src="../images/f8effect_header.webp" width="1024" height="500" class="img-fluid d-none d-sm-block" alt="F8 Effect">
+			<img src="../images/f8effect_header_square.webp" width="512" height="512" class="img-fluid d-sm-none d-sm-block" alt="F8 Effect">
+			<div class="main-text"><h2>F8 Effect マニュアル</h2><p class="manual-version">バージョン 1.0.5 対応</p></div>
+		</div>
+
+		<div class="logo">
+			<a href="//hz3software.com/">
+				<h1>
+					<img src="../../images/hz3software.png" width="128" height="32" alt="HZ3 Software">
+				</h1>
+			</a>
+		</div>
+	</header>
+
+	<div class="container">
+		<main>
+			<article>
+				<div class="text-center mb-3">
+					<a href="../" class="btn btn-outline-secondary btn-sm me-2">← F8 Effect トップ</a>
+					<span class="lang-switch"><a href="en/">English</a></span>
+				</div>
+			</article>
+
+			<!-- 目次 -->
+			<article>
+				<h3>目次</h3>
+				<ol>
+					<li><a href="#overlay">撮影モードの各ボタン</a></li>
+					<li><a href="#import">画像読み込み / 編集モードの各ボタン</a></li>
+					<li><a href="#capture">撮影・保存</a></li>
+					<li><a href="#effects">エフェクト設定パネルの各項目</a></li>
+					<li><a href="#preset">プリセットメニュー</a></li>
+				</ol>
+			</article>
+
+			<hr>
+
+			<!-- 撮影モードの各ボタン -->
+			<article id="overlay">
+				<h3>撮影モードの各ボタン</h3>
+				<p>アプリを起動するとカメラのライブビューが表示されます。エフェクトがリアルタイムでかかった状態を確認しながら撮影できます。</p>
+
+				<div class="row align-items-start g-4 mt-1">
+					<div class="col-12 col-md-5 text-center">
+						<a href="images/overlay_panel_cameramode_annotation.png" class="luminous"><img src="images/overlay_panel_cameramode_annotation.png" class="annotation-img" alt="カメラ画面 各ボタンの説明"></a>
+					</div>
+					<div class="col-12 col-md-7">
+						<ul class="annotation-list">
+							<li>
+								<span class="annotation-num">1</span>
+								<span><strong>カメラ映像</strong><br><span class="text-muted small">ピンチイン・アウト（モバイル）またはマウスホイール（PC）でズームイン・アウト</span></span>
+							</li>
+							<li>
+								<span class="annotation-num">2</span>
+								<span><strong>カメラ切り替え</strong><br><span class="text-muted small">フロント / バックカメラを切り替え</span></span>
+							</li>
+							<li>
+								<span class="annotation-num">3</span>
+								<span><strong>グリッド</strong><br><span class="text-muted small">撮影補助グリッドの表示切り替え（なし / 三分割法 / 中央十字）</span></span>
+							</li>
+							<li>
+								<span class="annotation-num">4</span>
+								<span><strong>シャッター</strong><br><span class="text-muted small">撮影してカメラロールに保存</span></span>
+							</li>
+							<li>
+								<span class="annotation-num">5</span>
+								<span><strong>タイマー</strong><br><span class="text-muted small">遅延撮影の秒数を設定（オフ / 3 / 5 / 10 秒）</span></span>
+							</li>
+							<li>
+								<span class="annotation-num">6</span>
+								<span><strong>メニュー</strong><br><span class="text-muted small">エフェクト設定パネルを開く</span></span>
+							</li>
+							<li>
+								<span class="annotation-num">7</span>
+								<span><strong>プリセットメニュー</strong><br><span class="text-muted small">プリセット選択画面を直接開く</span></span>
+							</li>
+							<li>
+								<span class="annotation-num">8</span>
+								<span><strong>画像読み込み / 編集モード</strong><br><span class="text-muted small">アルバムから写真を読み込んでエフェクトを適用する編集モードに切り替え</span></span>
+							</li>
+							<li>
+								<span class="annotation-num">9</span>
+								<span><strong>ピクセル解像度</strong><br><span class="text-muted small">現在の解像度プリセット名を表示。タップで解像度選択画面を開く</span></span>
+							</li>
+							<li>
+								<span class="annotation-num">10</span>
+								<span><strong>UI 非表示</strong><br><span class="text-muted small">ボタン類を一時的に隠してカメラ映像だけを表示。再度タップで元に戻す</span></span>
+							</li>
+							<li>
+								<span class="annotation-num">11</span>
+								<span><strong>縦横スワップ</strong><br><span class="text-muted small">解像度の縦横を入れ替え（例：横長 → 縦長）</span></span>
+							</li>
+							<li>
+								<span class="annotation-num">12</span>
+								<span><strong>マップビュー</strong><br><span class="text-muted small">ズームや移動後の現在位置を表示。タップすると初期位置にリセット</span></span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</article>
+			<hr>
+
+			<!-- 画像を読み込む -->
+			<article id="import">
+				<h3>画像読み込み / 編集モードの各ボタン</h3>
+				<p>画像読み込みボタン（<a href="#overlay">⑧</a>）をタップするとアルバムから写真を選択でき、編集モードに切り替わります。読み込んだ写真に対してカメラ撮影と同じエフェクトをかけて編集できます。</p>
+
+				<div class="row align-items-start g-4 mt-1">
+					<div class="col-12 col-md-5 text-center">
+						<a href="images/overlay_panel_imageeditmode_annotation_jp.png" class="luminous"><img src="images/overlay_panel_imageeditmode_annotation_jp.png" class="annotation-img" alt="編集モード 各ボタンの説明"></a>
+					</div>
+					<div class="col-12 col-md-7">
+						<ul class="annotation-list">
+							<li>
+								<span class="annotation-num">13</span>
+								<span><strong>最後に撮った写真</strong><br><span class="text-muted small">直前に撮影・保存した写真をそのまま読み込む</span></span>
+							</li>
+							<li>
+								<span class="annotation-num">14</span>
+								<span><strong>撮影モードへの切り替え</strong><br><span class="text-muted small">ライブカメラの撮影モードに戻る</span></span>
+							</li>
+							<li>
+								<span class="annotation-num">15</span>
+								<span><strong>画像読み込み</strong><br><span class="text-muted small">アルバムから別の写真を選択して読み込む</span></span>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<ul class="mt-3">
+					<li>JPEG・PNG・HEIC などの一般的な形式に対応しています。</li>
+					<li>エフェクトを変更しながらリアルタイムでプレビューを確認できます。</li>
+					<li>シャッターボタンで保存すると、エフェクトを適用した画像がカメラロールに書き出されます。</li>
+				</ul>
+			</article>
+			<hr>
+
+			<!-- 撮影・保存 -->
+			<article id="capture">
+				<h3>撮影・保存</h3>
+				<p>シャッターボタン（<a href="#overlay">④</a>）をタップすると撮影されます。撮影した画像はデバイスのカメラロールに自動で保存されます。</p>
+				<h4>タイマー撮影</h4>
+				<p>タイマーボタン（<a href="#overlay">⑤</a>）で 3・5・10 秒のいずれかを選択してシャッターを押すと、カウントダウン後に自動で撮影されます。</p>
+				<p>撮影した写真に F8 Effect のロゴを入れたくない場合は、設定からロゴを非表示にできます。</p>
+			</article>
+
+
+
+			<hr>
+
+			<!-- エフェクト設定 -->
+			<article id="effects">
+				<h3>エフェクト設定パネルの各項目</h3>
+				<p>メニューボタン（<a href="#overlay">⑥</a>）からエフェクト設定パネルを開きます。</p>
+
+				<div class="row align-items-start g-4 mt-1 mb-4">
+					<div class="col-12 col-md-5 text-center">
+						<a href="images/effect_panel_annotation_jp.png" class="luminous"><img src="images/effect_panel_annotation_jp.png" class="annotation-img" alt="エフェクトパネル 各項目の説明"></a>
+					</div>
+					<div class="col-12 col-md-7">
+						<ul class="annotation-list">
+							<li>
+								<span class="annotation-num">16</span>
+								<span><strong>マイプリセットに保存</strong><br><span class="text-muted small">現在のエフェクト設定をマイプリセットとして保存する</span></span>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<h4>解像度設定</h4>
+				<p>ピクセル解像度のプリセットを選択します。数値が小さいほどピクセルが粗くなり、よりレトロな見た目になります。縦横スワップで向きを切り替えることもできます。</p>
+
+				<h4>色設定</h4>
+				<dl>
+					<dt>カラーパレット</dt>
+					<dd>映像に使用する色の組み合わせを選びます。約100種類のパレットから選択でき、各パレットの色を個別に調整することも可能です。</dd>
+					<dt>コントラスト</dt>
+					<dd>明暗の差を調整します。上げると輪郭がくっきりし、下げると全体的に平坦な印象になります。</dd>
+					<dt>明度</dt>
+					<dd>映像全体の明るさを調整します。</dd>
+					<dt>色反転</dt>
+					<dd>色を反転させます。ネガフィルムのような独特の雰囲気を演出できます。</dd>
+				</dl>
+
+				<h4>ディザリング</h4>
+				<dl>
+					<dt>パターン選択</dt>
+					<dd>中間色をドットのパターンで表現する手法です。ベイヤー・縦縞・横縞・ランダムなど複数のパターンから選択でき、パターンごとに異なるテクスチャを演出します。オフにするとディザリングなしの均一なブロックになります。</dd>
+				</dl>
+
+				<h4>CRT</h4>
+				<dl>
+					<dt>RGB マスク</dt>
+					<dd>ブラウン管モニターのサブピクセルを模したマスクを重ねます。レトロなCRT画面らしい粒感が加わります。</dd>
+					<dt>ヴィネット</dt>
+					<dd>画面の四隅を暗くします。フィルム写真やレトロカメラのような雰囲気を演出します。</dd>
+					<dt>色収差</dt>
+					<dd>RGB の各チャンネルをわずかにズラして、レンズの色ズレを再現します。</dd>
+					<dt>曲率</dt>
+					<dd>画面を球面状に歪めます。古いブラウン管テレビのような丸みを演出します。</dd>
+				</dl>
+
+				<h4>エッジ検出</h4>
+				<dl>
+					<dt>オン / オフ</dt>
+					<dd>映像の輪郭を検出して強調表示します。イラストや漫画のようなアウトライン表現になります。</dd>
+					<dt>強度</dt>
+					<dd>エッジ検出の強さを調整します。強くすると細かな輪郭まで拾い、弱くすると主要な輪郭のみが強調されます。</dd>
+				</dl>
+			</article>
+			<hr>
+
+			<!-- プリセット -->
+			<article id="preset">
+				<h3>プリセットメニュー</h3>
+				<p>プリセットメニューボタン（<a href="#overlay">⑦</a>）から直接開けます。カラーパレット・解像度・各エフェクトの組み合わせをプリセットとして保存・呼び出しができます。</p>
+
+				<div class="row align-items-start g-4 mt-1">
+					<div class="col-12 col-md-5 text-center">
+						<a href="images/presets_panel_annotation_jp.png" class="luminous"><img src="images/presets_panel_annotation_jp.png" class="annotation-img" alt="プリセットメニュー 各項目の説明"></a>
+					</div>
+					<div class="col-12 col-md-7">
+						<ul class="annotation-list">
+							<li>
+								<span class="annotation-num">17</span>
+								<span><strong>切り替えタブ</strong><br><span class="text-muted small">ビルトインプリセットとマイプリセットを切り替える</span></span>
+							</li>
+							<li>
+								<span class="annotation-num">18</span>
+								<span><strong>プリセットカード</strong><br><span class="text-muted small">プリセットのカラーパレット・解像度・エフェクト設定をプレビューする画像。この画像を出力・共有できる</span></span>
+							</li>
+							<li>
+								<span class="annotation-num">19</span>
+								<span><strong>プリセットを適用</strong><br><span class="text-muted small">このプリセットのエフェクト設定を現在のカメラに適用する</span></span>
+							</li>
+							<li>
+								<span class="annotation-num">20</span>
+								<span><strong>操作ボタン</strong><br><span class="text-muted small">左から：プリセットカード画像を書き出す / 読み込む / シェアする / 削除する</span></span>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<h4>カラーパレット</h4>
+				<p>約100種類のカラーパレットから選択できます。カラーパレットは映像に使用する色の組み合わせを定義しており、選ぶだけでガラッと雰囲気が変わります。各パレットの色数や配色を個別に調整することも可能です。</p>
+
+				<h4>マイプリセット <small class="text-muted">（v1.0.5 以降）</small></h4>
+				<p>エフェクト設定パネルの保存ボタン（<a href="#effects">⑯</a>）から現在の設定をマイプリセットとして登録できます。保存したプリセットはマイプリセットタブで管理できます。現在の上限は <strong>20件</strong> です。</p>
+				<h4>プリセットを共有する <small class="text-muted">（v1.0.5 以降）</small></h4>
+				<p>マイプリセットをQRコードとして出力し、他のデバイスや他のユーザーと設定を共有できます。操作ボタン（⑳）のシェアアイコンをタップするとQRコードが表示され、相手のデバイスで読み取るだけでそのままマイプリセットに追加できます。</p>
+				<p>QRコードの読み込みは、操作ボタン（⑳）の <strong>Import（読み込み）</strong> またはデバイスの <strong>標準カメラアプリ</strong> から行えます。</p>
+			</article>
+
+
+
+
+		</main>
+
+		<footer class="text-center">
+			<small class="text-muted">© 2017-2026 HZ3 Software / yuta</small>
+		</footer>
+	</div>
+
+	<!-- Bootstrap Bundle -->
+	<script src="//cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+	<!-- Luminous -->
+	<script src="https://cdn.jsdelivr.net/npm/luminous-lightbox@2.3.2/dist/luminous.min.js"></script>
+	<script>
+		document.querySelectorAll('.luminous').forEach(el => new Luminous(el));
+
+		// Scroll fade-in
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach(e => {
+				if (e.isIntersecting) {
+					e.target.classList.add('visible');
+					observer.unobserve(e.target);
+				}
+			});
+		}, { threshold: 0.08 });
+		document.querySelectorAll('article').forEach(el => observer.observe(el));
+	</script>
+</body>
+</html>

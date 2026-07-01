@@ -37,6 +37,48 @@
 	<link rel="apple-touch-icon" href="https://hz3software.com/images/hz3software_appicon.png">
 
 	<title>BataGacha! | HZ3 Software</title>
+	<!-- Page styles -->
+	<style>
+		/* ── Scroll fade-in ────────────────────────────── */
+		article {
+			opacity: 0;
+			transform: translateY(16px);
+			transition: opacity 0.45s ease-out, transform 0.45s ease-out;
+		}
+		article.visible {
+			opacity: 1;
+			transform: none;
+		}
+
+		/* ── Section headings ──────────────────────────── */
+		article > h3 {
+			padding-bottom: 8px;
+			margin-bottom: 18px;
+			border-bottom: 2px solid #27B58B;
+		}
+
+		/* ── Store badges hover ────────────────────────── */
+		a.badge {
+			display: inline-block;
+			transition: transform 0.2s ease, opacity 0.2s ease;
+		}
+		a.badge:hover {
+			transform: translateY(-2px);
+			opacity: 0.85;
+		}
+
+		/* ── Badge container: centered block, left-flow rows ── */
+		.badges {
+			text-align: center;
+		}
+		.badges > .text-center {
+			display: inline-flex;
+			flex-wrap: wrap;
+			justify-content: flex-start;
+			gap: 8px;
+			text-align: left;
+		}
+	</style>
 </head>
 <body>
 	<!-- メイン画像 -->
@@ -223,6 +265,18 @@
 
 	<!-- Bootstrap Bundle -->
 	<script src="//cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+	<!-- Scroll fade-in -->
+	<script>
+		const _obs = new IntersectionObserver((entries) => {
+			entries.forEach(e => {
+				if (e.isIntersecting) {
+					e.target.classList.add('visible');
+					_obs.unobserve(e.target);
+				}
+			});
+		}, { threshold: 0.08 });
+		document.querySelectorAll('article').forEach(el => _obs.observe(el));
+	</script>
 	<!-- Luminous -->
 	<script src="https://cdn.jsdelivr.net/npm/luminous-lightbox@2.3.2/dist/luminous.min.js"></script>
     <script>

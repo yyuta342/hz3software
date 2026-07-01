@@ -53,6 +53,104 @@
 	  "applicationCategory": "PhotographyApplication"
 	}
 	</script>
+	<!-- Page styles -->
+	<style>
+		/* ── Scroll fade-in ────────────────────────────── */
+		article {
+			opacity: 0;
+			transform: translateY(16px);
+			transition: opacity 0.45s ease-out, transform 0.45s ease-out;
+		}
+		article.visible {
+			opacity: 1;
+			transform: none;
+		}
+
+		/* ── Section headings ──────────────────────────── */
+		article > h3 {
+			padding-bottom: 8px;
+			margin-bottom: 18px;
+			border-bottom: 2px solid #27B58B;
+		}
+
+		/* ── Feature list ──────────────────────────────── */
+		.feature-list li {
+			padding: 10px 8px;
+			border-radius: 6px;
+			transition: background 0.18s;
+		}
+		.feature-list li:hover {
+			background: rgba(39, 181, 139, 0.07);
+		}
+
+		/* ── Use-case list ─────────────────────────────── */
+		ul.update li {
+			padding: 7px 8px;
+			border-radius: 6px;
+			transition: background 0.18s;
+		}
+		ul.update li:hover {
+			background: rgba(39, 181, 139, 0.07);
+		}
+
+		/* ── Store badges ──────────────────────────────── */
+		a.badge {
+			display: inline-block;
+			transition: transform 0.2s ease, opacity 0.2s ease;
+		}
+		a.badge:hover {
+			transform: translateY(-2px);
+			opacity: 0.85;
+		}
+
+		/* ── Release notes buttons ─────────────────────── */
+		.btn {
+			transition: transform 0.15s ease, box-shadow 0.15s ease !important;
+		}
+		.btn:hover {
+			transform: translateY(-1px);
+			box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35) !important;
+		}
+
+		/* ── Release notes collapse panels ────────────── */
+		.collapse-dark {
+			transition: none;
+		}
+		.collapse-dark .card {
+			border-left: 2px solid #27B58B;
+		}
+		/* ── Nav pills (lang / manual) ─────────────────── */
+		.nav-pill {
+			display: inline-flex;
+			align-items: center;
+			gap: 5px;
+			padding: 5px 14px;
+			border-radius: 999px;
+			border: 1px solid rgba(255, 255, 255, 0.18);
+			color: #ccc;
+			font-size: 0.85em;
+			text-decoration: none;
+			background: rgba(255, 255, 255, 0.05);
+			transition: background 0.18s, border-color 0.18s, color 0.18s, transform 0.18s;
+		}
+		.nav-pill:hover {
+			background: rgba(39, 181, 139, 0.15);
+			border-color: #27B58B;
+			color: #fff;
+			transform: translateY(-1px);
+		}
+		/* ── Badge container: centered block, left-flow rows ── */
+		.badges {
+			text-align: center;
+		}
+		.badges > .text-center {
+			display: inline-flex;
+			flex-wrap: wrap;
+			justify-content: flex-start;
+			gap: 8px;
+			text-align: left;
+		}
+	</style>
 </head>
 <body>
 	<!-- Header image -->
@@ -93,9 +191,10 @@
 						</a>
 					</div>
 				</div>
-				<div class="text-center">
-					<span class="lang-switch"><a href="../">日本語</a></span>
-				</div>
+				<div class="text-center d-flex justify-content-center gap-2 flex-wrap mt-2">
+						<a href="../" class="nav-pill">日本語</a>
+						<a href="../manual/en/" class="nav-pill">Manual</a>
+					</div>
 			</article>
 
 			<!-- Hashtag -->
@@ -179,27 +278,10 @@
 
 			<!-- Version History -->
 			<article>
-				<h3>Version History</h3>
-				<ul class="update">
-					<li>
-						<div class="update-text">v1.0.4 released.</div>
-					</li>
-					<li>
-						<div class="update-text">v1.0.3 released.</div>
-					</li>
-					<li>
-						<div class="update-text">v1.0.2 released.</div>
-					</li>
-					<li>
-						<div class="update-text">v1.0.1 released.</div>
-					</li>
-					<li>
-						<div class="update-text">v1.0.0 — Initial release.</div>
-					</li>
-				</ul>
 
 				<div class="row g-2 justify-content-center mb-2">
-					<div class="col-12 col-md-4"><a class="btn btn-primary w-100" data-bs-toggle="collapse" href="#v104CollapseEn" role="button" aria-controls="v104CollapseEn">v1.0.4 Release Notes</a></div>
+					<div class="col-12 col-md-4"><a class="btn btn-primary w-100" data-bs-toggle="collapse" href="#v105CollapseEn" role="button" aria-controls="v105CollapseEn">v1.0.5 Release Notes</a></div>
+					<div class="col-12 col-md-4"><a class="btn btn-secondary w-100" data-bs-toggle="collapse" href="#v104CollapseEn" role="button" aria-controls="v104CollapseEn">v1.0.4 Release Notes</a></div>
 					<div class="col-12 col-md-4"><a class="btn btn-secondary w-100" data-bs-toggle="collapse" href="#v103CollapseEn" role="button" aria-controls="v103CollapseEn">v1.0.3 Release Notes</a></div>
 					<div class="col-12 col-md-4"><a class="btn btn-secondary w-100" data-bs-toggle="collapse" href="#v102CollapseEn" role="button" aria-controls="v102CollapseEn">v1.0.2 Release Notes</a></div>
 					<div class="col-12 col-md-4"><a class="btn btn-secondary w-100" data-bs-toggle="collapse" href="#v101CollapseEn" role="button" aria-controls="v101CollapseEn">v1.0.1 Release Notes</a></div>
@@ -207,6 +289,23 @@
 				</div>
 
 				<div id="versionAccordionEn">
+					<div class="collapse collapse-dark" id="v105CollapseEn" data-bs-parent="#versionAccordionEn">
+						<div class="card card-body bg-dark text-start mb-2">
+							<h4>New &amp; Improved</h4>
+							<ul>
+								<li>Added My Presets — save and manage your own effect settings.</li>
+								<li>Added preset sharing via QR code.</li>
+								<li>Added a direct preset menu button; removed Quick Menu.</li>
+							</ul>
+							<h4>Bug Fixes</h4>
+							<ul>
+								<li>Fixed dither Vertical Lines / Horizontal Lines direction on mobile.</li>
+								<li>Fixed portrait photos loading sideways.</li>
+								<li>Fixed image loading issues on Windows and Mac.</li>
+							</ul>
+							<p>Minor UI improvements and bug fixes.</p>
+						</div>
+					</div>
 					<div class="collapse collapse-dark" id="v104CollapseEn" data-bs-parent="#versionAccordionEn">
 						<div class="card card-body bg-dark text-start mb-2">
 							<h4>New &amp; Improved</h4>
@@ -336,6 +435,18 @@
 
 	<!-- Bootstrap Bundle -->
 	<script src="//cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+	<!-- Scroll fade-in -->
+	<script>
+		const _obs = new IntersectionObserver((entries) => {
+			entries.forEach(e => {
+				if (e.isIntersecting) {
+					e.target.classList.add('visible');
+					_obs.unobserve(e.target);
+				}
+			});
+		}, { threshold: 0.08 });
+		document.querySelectorAll('article').forEach(el => _obs.observe(el));
+	</script>
 	<!-- Luminous -->
 	<script src="https://cdn.jsdelivr.net/npm/luminous-lightbox@2.3.2/dist/luminous.min.js"></script>
 	<script>
