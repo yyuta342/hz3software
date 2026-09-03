@@ -17,7 +17,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=M+PLUS+2:wght@200;400;700;900&display=swap" rel="stylesheet">
 
 	<!-- SEO -->
-	<meta name="description" content="メテオプリンセス（Meteor Princess）は空から落ちながらコインを集めるドット絵アクションゲーム。iOS・Android対応。HZ3 Software（yuta）開発。">
+	<meta name="description" content="メテオプリンセス（Meteor Princess）は空から落ちながらコインを集めるドット絵アクションゲーム。iOS・Android・Windows・macOS・ブラウザ対応。HZ3 Software（yuta）開発。">
 	<link rel="canonical" href="https://hz3software.com/meteorprincess/">
 
 	<!-- OGP -->
@@ -26,7 +26,7 @@
 	<meta name="twitter:creator" content="@yyuta342">
 	<meta property="og:type" content="website">
 	<meta property="og:title" content="メテオプリンセス（Meteor Princess）- HZ3 Software">
-	<meta property="og:description" content="『姫は空の城から落ちていった。』メテオプリンセスは空から落ちながらコインを集めるドット絵アクションゲーム。iOS・Android対応。">
+	<meta property="og:description" content="『姫は空の城から落ちていった。』メテオプリンセスは空から落ちながらコインを集めるドット絵アクションゲーム。iOS・Android・Windows・macOS・ブラウザ対応。">
 	<meta property="og:image" content="https://hz3software.com/images/twitcard_meteorprincess.png">
 	<meta property="og:url" content="https://hz3software.com/meteorprincess/">
 
@@ -48,7 +48,7 @@
 	  "image": "https://hz3software.com/images/twitcard_meteorprincess.png",
 	  "author": { "@type": "Person", "name": "yuta", "url": "https://hz3software.com/" },
 	  "publisher": { "@type": "Organization", "name": "HZ3 Software", "url": "https://hz3software.com/" },
-	  "gamePlatform": ["iOS", "Android"],
+	  "gamePlatform": ["iOS", "Android", "Windows", "macOS", "Web browser"],
 	  "applicationCategory": "Game"
 	}
 	</script>
@@ -75,6 +75,23 @@
 			border-bottom: 2px solid #F58BB0;
 		}
 
+		/* ── Header art ───────────────────────────────── */
+		/* ヘッダー画像はドット絵の原寸(横256px / 正方形は128px)なので、
+		   画面幅まで拡大したときに補間で滲まないようnearestで拡大する */
+		.main-art img {
+			width: 100%;
+			image-rendering: pixelated;
+		}
+		/* 横長版(sm以上で表示)は全幅だと大きすぎるので半分のサイズで中央に置く。
+		   正方形版(sm未満で表示)は全幅のまま。 */
+		@media (min-width: 576px) {
+			.main-art img {
+				display: block;
+				width: 50%;
+				margin: 0 auto;
+			}
+		}
+
 		/* ── Store badges hover ────────────────────────── */
 		a.badge {
 			display: inline-block;
@@ -90,8 +107,8 @@
 	<!-- メイン画像 -->
 	<header>
 		<div class="main-art">
-			<img src="images/meteorprincess_header.webp" width="1024" height="500" class="img-fluid d-none d-sm-block" alt="メテオプリンセス">
-			<img src="images/meteorprincess_header_square.webp" width="640" height="640" class="img-fluid d-sm-none" alt="メテオプリンセス">
+			<img src="images/meteorprincess_header.webp" width="256" height="144" class="img-fluid d-none d-sm-block" alt="メテオプリンセス">
+			<img src="images/meteorprincess_header_square.webp" width="128" height="128" class="img-fluid d-sm-none" alt="メテオプリンセス">
 
 			<div class="main-text"><h2>姫は空の城から落ちていった。</h2></div>
 		</div>
@@ -123,6 +140,9 @@
 						</a>
 						<a class="badge" href="https://play.google.com/store/apps/details?id=com.hz3software.meteorprincess" target="_blank">
 							<img src="../images/badge_googleplay_ja.png" width="200" height="68" alt="Google Playで手に入れよう">
+						</a>
+						<a class="badge" href="https://yyuta342.itch.io/meteorprincess" target="_blank">
+							<img src="../images/badge_itch.png" width="200" height="67" alt="itch.io">
 						</a>
 					</div>
 				</div>
@@ -223,7 +243,7 @@
 					</tr>
 					<tr>
 						<td>対応機種</td>
-						<td>iOS・Android・Windows・macOS</td>
+						<td>iOS・Android・Windows・macOS・ブラウザ</td>
 					</tr>
 					<tr>
 						<td>発売日</td>
