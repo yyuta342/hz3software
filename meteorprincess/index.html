@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- CSS -->
+	<link href="//cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link href="../css/base.css" rel="stylesheet">
+	<link href="css/meteorprincess.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/luminous-lightbox@2.3.2/dist/luminous-basic.min.css" />
+
+	<!-- Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=M+PLUS+2:wght@200;400;700;900&display=swap" rel="stylesheet">
+
+	<!-- SEO -->
+	<meta name="description" content="メテオプリンセス（Meteor Princess）は空から落ちながらコインを集めるドット絵アクションゲーム。iOS・Android対応。HZ3 Software（yuta）開発。">
+	<link rel="canonical" href="https://hz3software.com/meteorprincess/">
+
+	<!-- OGP -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:site" content="@yyuta342">
+	<meta name="twitter:creator" content="@yyuta342">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="メテオプリンセス（Meteor Princess）- HZ3 Software">
+	<meta property="og:description" content="『姫は空の城から落ちていった。』メテオプリンセスは空から落ちながらコインを集めるドット絵アクションゲーム。iOS・Android対応。">
+	<meta property="og:image" content="https://hz3software.com/images/twitcard_meteorprincess.png">
+	<meta property="og:url" content="https://hz3software.com/meteorprincess/">
+
+	<!-- Icons -->
+	<link rel="icon" type="image/png" href="https://hz3software.com/meteorprincess/images/favicon.ico">
+	<link rel="apple-touch-icon" href="https://hz3software.com/meteorprincess/images/apple-touch-icon-180x180.png">
+
+	<title>メテオプリンセス（Meteor Princess）| HZ3 Software</title>
+
+	<!-- Structured Data -->
+	<script type="application/ld+json">
+	{
+	  "@context": "https://schema.org",
+	  "@type": "VideoGame",
+	  "name": "メテオプリンセス",
+	  "alternateName": "Meteor Princess",
+	  "description": "空から落ちながらコインを集めるドット絵アクションゲーム。",
+	  "url": "https://hz3software.com/meteorprincess/",
+	  "image": "https://hz3software.com/images/twitcard_meteorprincess.png",
+	  "author": { "@type": "Person", "name": "yuta", "url": "https://hz3software.com/" },
+	  "publisher": { "@type": "Organization", "name": "HZ3 Software", "url": "https://hz3software.com/" },
+	  "gamePlatform": ["iOS", "Android"],
+	  "applicationCategory": "Game"
+	}
+	</script>
+
+	<!-- Page styles -->
+	<style>
+		/* ── Scroll fade-in ────────────────────────────── */
+		article {
+			opacity: 0;
+			transform: translateY(16px);
+			transition: opacity 0.45s ease-out, transform 0.45s ease-out;
+		}
+		article.visible {
+			opacity: 1;
+			transform: none;
+		}
+
+		/* ── Section headings ──────────────────────────── */
+		article > h3 {
+			padding-bottom: 8px;
+			margin-bottom: 18px;
+			/* base.css の緑(#008250)を本作のピンクで上書き */
+			color: #F58BB0;
+			border-bottom: 2px solid #F58BB0;
+		}
+
+		/* ── Store badges hover ────────────────────────── */
+		a.badge {
+			display: inline-block;
+			transition: transform 0.2s ease, opacity 0.2s ease;
+		}
+		a.badge:hover {
+			transform: translateY(-2px);
+			opacity: 0.85;
+		}
+	</style>
+</head>
+<body>
+	<!-- メイン画像 -->
+	<header>
+		<div class="main-art">
+			<img src="images/meteorprincess_header.webp" width="1024" height="500" class="img-fluid d-none d-sm-block" alt="メテオプリンセス">
+			<img src="images/meteorprincess_header_square.webp" width="640" height="640" class="img-fluid d-sm-none" alt="メテオプリンセス">
+
+			<div class="main-text"><h2>姫は空の城から落ちていった。</h2></div>
+		</div>
+
+		<div class="logo">
+			<a href="//hz3software.com/">
+				<h1>
+					<img src="../images/hz3software.png" width="128" height="32" alt="HZ3 Software">
+				</h1>
+			</a>
+		</div>
+	</header>
+
+	<div class="container">
+		<main>
+			<!-- YouTube -->
+			<article>
+				<div class="ratio ratio-16x9">
+					<iframe src="https://www.youtube.com/embed/JMDjPeTBacc" title="【Androidアプリ】メテオプリンセス" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+				</div>
+			</article>
+
+			<!-- 各種配信ストア -->
+			<article>
+				<div class="badges">
+					<div class="text-center">
+						<a class="badge" href="https://apps.apple.com/app/meteor-princess/id6807261848" target="_blank">
+							<img src="../images/badge_appstore_ja.png" width="200" height="68" alt="App Storeでダウンロード">
+						</a>
+						<a class="badge" href="https://play.google.com/store/apps/details?id=com.hz3software.meteorprincess" target="_blank">
+							<img src="../images/badge_googleplay_ja.png" width="200" height="68" alt="Google Playで手に入れよう">
+						</a>
+					</div>
+				</div>
+			</article>
+
+			<!-- 概要 -->
+			<article>
+				<h3>『メテオプリンセス』って何？</h3>
+				<p><strong class="black">『メテオプリンセス』</strong>は、空の城から落ちていくお姫様を操作して、流れ星のように地上を目指すドット絵アクションゲームです。<br>落下しながらコインを集めてスコアを稼ぎ、行く手をふさぐ障害物をよけ続けましょう。ルールはとてもシンプルで、1プレイは数分。ちょっとした空き時間にちょうどいい手軽さです。</p>
+				<div class="text-end"><small class="text-muted">※詳しい操作説明はゲーム内のHELPをご確認ください。</small></div>
+			</article>
+
+			<!-- ストーリー -->
+			<article>
+				<h3>ストーリー</h3>
+				<p>ある日突然、お姫様は悪者にさらわれて、高い空の上の城の中に囚われてしまいました。<br>けれどお姫様は、助けを待ってなどいませんでした。<br>自らの足で城を飛び出し、遥か下に広がる地上へと落ちていったのです。</p>
+			</article>
+
+			<!-- 遊びかた -->
+			<article>
+				<h3>遊びかた</h3>
+				<div class="howto row text-center">
+					<div class="howto-item col-12 col-md-4">
+						<p><span class="howto-num">1</span></p>
+						<p><strong class="bold">左右にフリック</strong><br>画面を左右にフリックすると、お姫様が1レーンずつ移動します。<br><small class="text-muted">※PCでは矢印キー / A・Dキーでも操作できます。</small></p>
+					</div>
+					<div class="howto-item col-12 col-md-4">
+						<p><span class="howto-num">2</span></p>
+						<p><strong class="bold">コインを集める</strong><br>落ちてくるコインを取るとスコアが加算されます。ハートを取ればライフが回復します。</p>
+					</div>
+					<div class="howto-item col-12 col-md-4">
+						<p><span class="howto-num">3</span></p>
+						<p><strong class="bold">障害物をよける</strong><br>ぶつかるとライフが減少。ライフがなくなる前に、制限時間いっぱいまで落ち続けましょう。</p>
+					</div>
+				</div>
+			</article>
+
+			<hr>
+
+			<!-- スクリーンショット -->
+			<article class="gallery row text-center">
+				<a href="images/scr0.png" class="luminous col-6 col-sm-4 col-md-3 col-lg-2">
+					<img src="images/scr0_thumb.png" class="img-fluid" width="180" height="240" alt="サムネイル0">
+				</a>
+				<a href="images/scr1.png" class="luminous col-6 col-sm-4 col-md-3 col-lg-2">
+					<img src="images/scr1_thumb.png" class="img-fluid" width="180" height="240" alt="サムネイル1">
+				</a>
+				<a href="images/scr2.png" class="luminous col-6 col-sm-4 col-md-3 col-lg-2">
+					<img src="images/scr2_thumb.png" class="img-fluid" width="180" height="240" alt="サムネイル2">
+				</a>
+				<a href="images/scr3.png" class="luminous col-6 col-sm-4 col-md-3 col-lg-2">
+					<img src="images/scr3_thumb.png" class="img-fluid" width="180" height="240" alt="サムネイル3">
+				</a>
+				<a href="images/scr4.png" class="luminous col-6 col-sm-4 col-md-3 col-lg-2">
+					<img src="images/scr4_thumb.png" class="img-fluid" width="180" height="240" alt="サムネイル4">
+				</a>
+				<a href="images/scr5.png" class="luminous col-6 col-sm-4 col-md-3 col-lg-2">
+					<img src="images/scr5_thumb.png" class="img-fluid" width="180" height="240" alt="サムネイル5">
+				</a>
+			</article>
+
+			<hr>
+
+			<!-- 更新情報 -->
+			<article>
+				<h3>更新情報</h3>
+				<ul class="update">
+					<li>
+						<span class="date">2026.9</span>
+						<div class="update-text">バージョン1.1をリリースしました。開発環境をLÖVEに移植、iOS・Android・PC向けに再配信開始。</div>
+					</li>
+					<li>
+						<span class="date">2014.9.13</span>
+						<div class="update-text">バージョン1.0をリリースしました。</div>
+					</li>
+				</ul>
+			</article>
+
+			<hr>
+
+			<!-- 開発者の話 -->
+			<article>
+				<h3>開発者の話</h3>
+				<p>『メテオプリンセス』の初代バージョンは、2014年にAndroid向けアプリ（OpenGL ES）として開発したものでした。ですが2016年に更新を停止したことでストアから削除され、ネット上からもほとんどの情報が消えてしまいました。</p>
+				<p>そして2026年。開発環境をLÖVEに移し、クロスプラットフォーム対応の作品としてもう一度配信し直すことにしました。ランキング機能はローカル保存に変更していますが、完全無料のアプリとして、自分の開発歴が残るように復活させています。</p>
+				<p>良ければ、ぜひ一度プレイしてみてください。</p>
+				<div class="text-end"><small class="text-muted">yuta</small></div>
+			</article>
+
+			<hr>
+
+			<!-- 詳細 -->
+			<article class="row mx-auto col-sm-12 col-md-8 col-lg-6">
+				<table class="table table-striped table-dark">
+					<tr>
+						<td>ジャンル</td>
+						<td>アクション、カジュアル</td>
+					</tr>
+					<tr>
+						<td>対応機種</td>
+						<td>iOS・Android</td>
+					</tr>
+					<tr>
+						<td>発売日</td>
+						<td>2014年9月13日</td>
+					</tr>
+					<tr>
+						<td>対応言語</td>
+						<td>日本語</td>
+					</tr>
+					<tr>
+						<td>価格</td>
+						<td>無料</td>
+					</tr>
+				</table>
+			</article>
+		</main>
+
+		<footer class="text-center">
+			<small class="text-muted">© 2014-2026 HZ3 Software / yuta</small>
+		</footer>
+	</div>
+
+	<!-- Bootstrap Bundle -->
+	<script src="//cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+	<!-- Scroll fade-in -->
+	<script>
+		const _obs = new IntersectionObserver((entries) => {
+			entries.forEach(e => {
+				if (e.isIntersecting) {
+					e.target.classList.add('visible');
+					_obs.unobserve(e.target);
+				}
+			});
+		}, { threshold: 0.08 });
+		document.querySelectorAll('article').forEach(el => _obs.observe(el));
+	</script>
+	<!-- Luminous -->
+	<script src="https://cdn.jsdelivr.net/npm/luminous-lightbox@2.3.2/dist/luminous.min.js"></script>
+	<script>
+		const luminousElems = document.querySelectorAll('.luminous');
+		if( luminousElems.length > 0 )
+		{
+			luminousElems.forEach((elem) =>
+			{
+				new Luminous(elem);
+			});
+		}
+	</script>
+</body>
+</html>

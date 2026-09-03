@@ -1,0 +1,30 @@
+.main-art img {
+  margin: 0 auto;
+  text-align: center;
+}
+.main-art .main-text {
+  margin: 0 auto;
+  text-align: center;
+}
+.main-art .main-text h2 {
+  font-size: 1.4em;
+  font-weight: 900;
+}
+
+header {
+  background: rgba(0, 0, 0, 0);
+}
+
+.howto .howto-item {
+  padding: 8px;
+}
+.howto .howto-item .howto-num {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
+  border-radius: 50%;
+  background-color: #f58bb0;
+  color: #111;
+  font-weight: 900;
+}
