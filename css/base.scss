@@ -134,6 +134,19 @@ h3
 	}
 }
 
+// YouTube 埋め込みに重ねる透明レイヤー（ホイールを親ページへ通す / クリックで解除）
+.video-scroll-guard
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	cursor: pointer;
+	background: transparent;
+}
+
 .game-title-logo
 {
 	padding: 32px;
