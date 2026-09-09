@@ -38,14 +38,14 @@
 body {
   font-family: "M PLUS 2", sans-serif;
   font-size: 1em;
-  background-color: rgb(8, 8, 8);
+  background: radial-gradient(1000px 500px at 50% -8%, rgba(0, 168, 104, 0.16), transparent 60%), rgb(8, 8, 8);
   color: lightgray;
 }
 
 header {
   margin: 0 0 0 0;
-  background-color: #008250;
-  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.45);
+  background: linear-gradient(135deg, #00a868 0%, #006b3c 100%);
+  box-shadow: 0 2px 24px rgba(0, 168, 104, 0.25), 0 2px 16px rgba(0, 0, 0, 0.45);
   position: relative;
   z-index: 2;
 }
@@ -226,18 +226,28 @@ footer {
   overflow: hidden;
   border-radius: 14px;
   background-color: #111;
+  border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 .zoom-box img {
   display: block;
   width: 100%;
   transition-duration: 0.35s;
 }
+.zoom-box::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 55%, rgba(0, 0, 0, 0.4) 100%);
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
 .game-card:hover .zoom-box,
 .game-card:focus-visible .zoom-box {
   transform: translateY(-6px);
-  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.55);
+  border-color: rgba(0, 200, 130, 0.55);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(0, 200, 130, 0.15), 0 0 28px rgba(0, 168, 104, 0.35);
 }
 .game-card:hover .zoom-box img,
 .game-card:focus-visible .zoom-box img {
@@ -319,24 +329,25 @@ footer {
   justify-content: center;
   width: 48px;
   height: 48px;
-  margin: 0 4px;
+  margin: 0 6px;
   vertical-align: middle;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   color: lightgray;
   text-decoration: none;
   transition: 150ms;
 }
 .social-links a:hover {
   transform: translateY(-3px);
+  background: rgba(0, 168, 104, 0.12);
+  border-color: rgba(0, 200, 130, 0.5);
+  box-shadow: 0 0 20px rgba(0, 168, 104, 0.35);
 }
 .social-links svg {
-  width: 24px;
-  height: 24px;
+  width: 22px;
+  height: 22px;
   fill: currentColor;
-}
-.social-links .sns-wordmark {
-  font-weight: 900;
-  font-size: 1.05rem;
-  letter-spacing: -0.02em;
 }
 .social-links .sns-x:hover {
   color: #ffffff;

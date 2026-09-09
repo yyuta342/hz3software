@@ -222,13 +222,6 @@ nav li
 	fill: currentColor;
 }
 
-.social-icon .sns-wordmark
-{
-	font-weight: 900;
-	font-size: 1.1rem;
-	letter-spacing: -0.02em;
-}
-
 .social-icon:hover
 {
 	transform: scale(1.2);
