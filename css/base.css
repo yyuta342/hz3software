@@ -242,3 +242,44 @@ footer {
   box-shadow: 0 0 0 0.25rem #000 !important;
   background-color: #000 !important;
 }/*# sourceMappingURL=base.css.map */
+
+.social-links {
+  padding: 40px 0 16px 0;
+}
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  margin: 0 4px;
+  vertical-align: middle;
+  color: lightgray;
+  text-decoration: none;
+  transition: 150ms;
+}
+.social-links a:hover {
+  transform: translateY(-3px);
+}
+.social-links svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+.social-links .sns-wordmark {
+  font-weight: 900;
+  font-size: 1.05rem;
+  letter-spacing: -0.02em;
+}
+.social-links .sns-x:hover {
+  color: #ffffff;
+}
+.social-links .sns-instagram:hover {
+  color: #e1306c;
+}
+.social-links .sns-youtube:hover {
+  color: #ff0000;
+}
+.social-links .sns-note:hover {
+  color: #41c9b4;
+}

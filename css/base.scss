@@ -299,3 +299,48 @@ footer
 	box-shadow: 0 0 0 .25rem #000 !important;
 	background-color: #000 !important;
 }
+
+// トップページの SNS リンク
+.social-links
+{
+	padding: 40px 0 16px 0;
+
+	a
+	{
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 48px;
+		height: 48px;
+		margin: 0 4px;
+		vertical-align: middle;
+		color: lightgray;
+		text-decoration: none;
+		transition: 150ms;
+
+		&:hover
+		{
+			transform: translateY(-3px);
+		}
+	}
+
+	svg
+	{
+		width: 24px;
+		height: 24px;
+		fill: currentColor;
+	}
+
+	// note はブランドアイコンが無いのでワードマークで代替
+	.sns-wordmark
+	{
+		font-weight: 900;
+		font-size: 1.05rem;
+		letter-spacing: -0.02em;
+	}
+
+	.sns-x:hover        { color: #ffffff; }
+	.sns-instagram:hover{ color: #e1306c; }
+	.sns-youtube:hover  { color: #ff0000; }
+	.sns-note:hover     { color: #41c9b4; }
+}
