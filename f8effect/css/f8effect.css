@@ -17,6 +17,7 @@
 
 header {
 	background: rgba(0, 0, 0, 0.0);
+	box-shadow: none;
 }
 
 .ba-compare {
