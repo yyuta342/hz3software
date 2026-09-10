@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
-	<head>
+<head>
 	<!-- Google tag (gtag.js) -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-CDVXWRF7BJ"></script>
 	<script>
@@ -11,92 +11,162 @@
 		gtag('config', 'G-CDVXWRF7BJ');
 	</script>
 
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<!-- OGP -->
-		<meta name="twitter:card" content="summary_large_image">
-		<meta name="twitter:site" content="@yyuta342">
-		<meta name="twitter:creator" content="@yyuta342">
-		<meta name="description" content="HZ3 Software へのお問い合わせ・サポートページ。メディア掲載・仕事依頼は yyuta.342@gmail.com まで。">
-		<link rel="canonical" href="https://hz3software.com/contact/">
-		<meta property="og:type" content="website">
-		<meta property="og:title" content="サポート・連絡 | HZ3 Software">
-		<meta property="og:description" content="HZ3 Software へのお問い合わせ・サポートページ。メディア掲載・仕事依頼は yyuta.342@gmail.com まで。">
-		<meta property="og:image" content="https://hz3software.com/images/twitcard_hz3software.png">
-		<meta property="og:url" content="https://hz3software.com/contact/">
+	<!-- CSS -->
+	<link href="//cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link href="../css/base.css" rel="stylesheet">
 
-		<title>サポート・連絡 - HZ3 Software</title>
+	<!-- Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=M+PLUS+2:wght@200;400;700;900&display=swap" rel="stylesheet">
 
-		<!-- Bootstrap -->
-		<link href="//cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-		<!-- Fonts -->
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=M+PLUS+2:wght@400;600;900&display=swap" rel="stylesheet">
-		<!-- CSS -->
-		<link href="../css/main.css" rel="stylesheet">
-		<link href="css/contact.css" rel="stylesheet">
+	<!-- SEO -->
+	<meta name="description" content="HZ3 Software へのお問い合わせ・サポートページ。メディア掲載・仕事依頼は yyuta.342@gmail.com まで。">
+	<link rel="canonical" href="https://hz3software.com/contact/">
 
-		<!-- Icons -->
-		<link rel="icon" type="image/png" href="https://hz3software.com/images/hz3software_favicon.png">
-		<link rel="apple-touch-icon" href="https://hz3software.com/images/hz3software_appicon.png">
-	</head>
-	<body>
-		<!-- HEADER -->
-		<header class="container">
-			<div class="row">
-				<!-- BRAND LOGO -->
-				<a href="../" class="brand-logo col-sm-12 col-md-4">
-					<img src="../images/hz3software_x4.png">
-				</a>
-				<!-- NAVBAR -->
-				<nav class="navbar navbar-expand col justify-content-center">
-					<ul class="navbar-nav mt-2 mb-2">
-						<li><a href="../">ゲーム一覧</a></li>
-						<li><a href="../contact/">サポート・連絡</a></li>
-					</ul>
-				</nav>
-			</div>
-		</header>
+	<!-- OGP -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:site" content="@yyuta342">
+	<meta name="twitter:creator" content="@yyuta342">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="サポート・連絡 | HZ3 Software">
+	<meta property="og:description" content="HZ3 Software へのお問い合わせ・サポートページ。メディア掲載・仕事依頼は yyuta.342@gmail.com まで。">
+	<meta property="og:image" content="https://hz3software.com/images/twitcard_hz3software.png">
+	<meta property="og:url" content="https://hz3software.com/contact/">
 
-		<div class="main-wrapper container">
-			<h1>サポート・連絡</h1>
+	<!-- Icons -->
+	<link rel="icon" type="image/png" href="https://hz3software.com/images/hz3software_favicon.png">
+	<link rel="apple-touch-icon" href="https://hz3software.com/images/hz3software_appicon.png">
 
-			<h2>メディアの方の問い合わせ</h2>
-			<p>イベント出展・登壇、仕事依頼・相談、メディア・雑誌掲載などのご連絡は『<span class="mail">yyuta.342@gmail.com</span>』へお願いいたします。</p>
+	<title>サポート・連絡 | HZ3 Software</title>
 
-			<h2>その他・質問</h2>
-			<p>その他ご質問はお気軽に <a href="https://x.com/yyuta342" target="_blank">@yyuta342</a> などでお願いいたします。</p>
-			<p>※個人対応の為、全ての問い合わせに確実に返信が可能という訳ではございませんのでご了承ください。</p>
+	<!-- Page styles -->
+	<style>
+		/* ── Scroll fade-in ────────────────────────────── */
+		article {
+			opacity: 0;
+			transform: translateY(16px);
+			transition: opacity 0.45s ease-out, transform 0.45s ease-out;
+		}
+		article.visible {
+			opacity: 1;
+			transform: none;
+		}
+
+		/* ── Section headings ──────────────────────────── */
+		article > h3 {
+			padding-bottom: 8px;
+			margin-bottom: 18px;
+			border-bottom: 2px solid #008250;
+		}
+
+		/* ── プロフィール ─────────────────────────────── */
+		.profile-card {
+			padding: 40px 0 24px 0;
+		}
+		.profile-icon {
+			display: block;
+			width: 96px;
+			height: 96px;
+			margin: 0 auto 16px auto;
+			border-radius: 50%;
+			border: 3px solid rgba(0, 168, 104, 0.4);
+			box-shadow: 0 0 24px rgba(0, 168, 104, 0.25);
+		}
+		.profile-name {
+			margin: 0 0 4px 0;
+			font-weight: 900;
+		}
+		.profile-handle {
+			margin: 0;
+			font-size: 0.9em;
+		}
+
+		.mail {
+			color: #00c87f;
+			font-weight: 900;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<div class="header-bar container">
+			<a href="//hz3software.com/" class="site-brand">
+				<img src="../images/hz3software.png" width="128" height="32" alt="HZ3 Software">
+			</a>
+			<nav class="site-nav">
+				<a href="//hz3software.com/">ゲーム一覧</a>
+				<a href="//hz3software.com/contact/">サポート・連絡</a>
+			</nav>
 		</div>
+	</header>
 
-		<div class="social-icons-box">
-			<a class="social-icon sns-x" href="https://x.com/yyuta342" target="_blank" rel="noopener" aria-label="X">
+	<main class="container">
+		<h1 class="text-center game-title-logo">サポート・連絡</h1>
+
+		<!-- プロフィール -->
+		<article class="profile-card text-center">
+			<img src="../images/hitsuji_icon.png" class="profile-icon" alt="yuta">
+			<h2 class="profile-name">yuta</h2>
+			<p class="profile-handle text-muted">@yyuta342 / HZ3 Software</p>
+		</article>
+
+		<!-- メディアの方の問い合わせ -->
+		<article>
+			<h3>メディアの方の問い合わせ</h3>
+			<p>イベント出展・登壇、仕事依頼・相談、メディア・雑誌掲載などのご連絡は『<span class="mail">yyuta.342@gmail.com</span>』へお願いいたします。</p>
+		</article>
+
+		<!-- その他・質問 -->
+		<article>
+			<h3>その他・質問</h3>
+			<p>その他ご質問はお気軽に <a href="https://x.com/yyuta342" target="_blank">@yyuta342</a> などでお願いいたします。</p>
+			<p><small class="text-muted">※個人対応の為、全ての問い合わせに確実に返信が可能という訳ではございませんのでご了承ください。</small></p>
+		</article>
+
+		<!-- SNS -->
+		<article class="social-links text-center">
+			<a class="sns-x" href="https://x.com/yyuta342" target="_blank" rel="noopener" aria-label="X">
 				<svg viewBox="0 0 512 512" aria-hidden="true"><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42l255.3 333.8z"/></svg>
 			</a>
-			<a class="social-icon sns-youtube" href="https://www.youtube.com/yyuta342" target="_blank" rel="noopener" aria-label="YouTube">
-				<svg viewBox="0 0 576 512" aria-hidden="true"><path d="M549.7 124.1c-6.3-23.7-24.8-42.3-48.3-48.6C458.8 64 288 64 288 64S117.2 64 74.6 75.5c-23.5 6.3-42 24.9-48.3 48.6-11.4 42.9-11.4 132.3-11.4 132.3s0 89.4 11.4 132.3c6.3 23.7 24.8 41.5 48.3 47.8C117.2 448 288 448 288 448s170.8 0 213.4-11.5c23.5-6.3 42-24.2 48.3-47.8 11.4-42.9 11.4-132.3 11.4-132.3s0-89.4-11.4-132.3zM232.1 337.6V175.2l142.7 81.2-142.7 81.2z"/></svg>
-			</a>
-			<a class="social-icon sns-instagram" href="https://www.instagram.com/yyuta342/" target="_blank" rel="noopener" aria-label="Instagram">
+			<a class="sns-instagram" href="https://www.instagram.com/yyuta342/" target="_blank" rel="noopener" aria-label="Instagram">
 				<svg viewBox="0 0 448 512" aria-hidden="true"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
 			</a>
-			<a class="social-icon sns-note" href="https://note.com/yyuta342" target="_blank" rel="noopener" aria-label="note">
+			<a class="sns-youtube" href="https://www.youtube.com/yyuta342" target="_blank" rel="noopener" aria-label="YouTube">
+				<svg viewBox="0 0 576 512" aria-hidden="true"><path d="M549.7 124.1c-6.3-23.7-24.8-42.3-48.3-48.6C458.8 64 288 64 288 64S117.2 64 74.6 75.5c-23.5 6.3-42 24.9-48.3 48.6-11.4 42.9-11.4 132.3-11.4 132.3s0 89.4 11.4 132.3c6.3 23.7 24.8 41.5 48.3 47.8C117.2 448 288 448 288 448s170.8 0 213.4-11.5c23.5-6.3 42-24.2 48.3-47.8 11.4-42.9 11.4-132.3 11.4-132.3s0-89.4-11.4-132.3zM232.1 337.6V175.2l142.7 81.2-142.7 81.2z"/></svg>
+			</a>
+			<a class="sns-note" href="https://note.com/yyuta342" target="_blank" rel="noopener" aria-label="note">
 				<svg viewBox="0 0 493 493" aria-hidden="true"><path d="m139.57,142.06c41.19,0,97.6-2.09,138.1-1.04,54.34,1.39,74.76,25.06,75.45,83.53.69,33.06,0,127.73,0,127.73h-58.79c0-82.83.35-96.5,0-122.6-.69-22.97-7.25-33.92-24.9-36.01-18.69-2.09-71.07-.35-71.07-.35v158.96h-58.79v-210.22Z"/></svg>
 			</a>
-			<a class="social-icon sns-github" href="https://github.com/yyuta342" target="_blank" rel="noopener" aria-label="GitHub">
+			<a class="sns-github" href="https://github.com/yyuta342" target="_blank" rel="noopener" aria-label="GitHub">
 				<svg viewBox="0 0 496 512" aria-hidden="true"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
 			</a>
-		</div>
+		</article>
+	</main>
 
-		<!-- FOOTER -->
-		<footer class="d-flex align-items-center">
-			<p class="copyright mx-auto">© 2017-2024 HZ3 Software / yuta</p>
-		</footer>
+	<footer class="text-center">
+		<small class="text-muted">© 2017-2026 HZ3 Software / yuta</small>
+	</footer>
 
-		<!-- Bootstrap Bundle -->
-		<script src="//cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-		<!-- Site JS -->
-		<script src="../js/base.js"></script>
-	</body>
+	<!-- Bootstrap Bundle -->
+	<script src="//cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+	<!-- Scroll fade-in -->
+	<script>
+		const _obs = new IntersectionObserver((entries) => {
+			entries.forEach(e => {
+				if (e.isIntersecting) {
+					e.target.classList.add('visible');
+					_obs.unobserve(e.target);
+				}
+			});
+		}, { threshold: 0.08 });
+		document.querySelectorAll('article').forEach(el => _obs.observe(el));
+	</script>
+	<!-- Site JS -->
+	<script src="../js/base.js"></script>
+</body>
 </html>

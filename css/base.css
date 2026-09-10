@@ -398,3 +398,6 @@ footer {
 .social-links .sns-note:hover {
   color: #41c9b4;
 }
+.social-links .sns-github:hover {
+  color: #ffffff;
+}
